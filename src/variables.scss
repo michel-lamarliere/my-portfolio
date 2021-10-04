@@ -13,12 +13,20 @@
 	src: url('./assets/fonts/Poppins-MediumItalic.ttf');
 }
 
+@font-face {
+	font-family: Poppins-Light;
+	src: url('./assets/fonts/Poppins-Light.ttf');
+}
+
 $fontMedium: Poppins-Medium;
 $fontSemiBold: Poppins-Semi-Bold;
 $fontMediumItalic: Poppins-Medium-Italic;
+$fontLight: Poppins-Light;
 
 $colorWhite: #ffffff;
+$colorBlack: #000000;
 $colorLightGrey: #808dc3;
 $colorGrey: #3b3c48;
 $colorDarkGrey: #2d3246;
-$colorBlack: #1d1e27;
+$colorVeryDarkGrey: #1d1e27;
+$colorOrange: #ed6544;

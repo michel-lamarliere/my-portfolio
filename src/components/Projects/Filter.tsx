@@ -7,21 +7,27 @@ import reactIcon from '../../assets/icons/react.svg';
 import reduxIcon from '../../assets/icons/redux.svg';
 import typescriptIcon from '../../assets/icons/typescript.svg';
 import wordpressIcon from '../../assets/icons/wordpress.svg';
+import googleCloudIcon from '../../assets/icons/google.svg';
 import firebaseIcon from '../../assets/icons/firebase.svg';
+import apiIcon from '../../assets/icons/api.svg';
 
 interface Props {
 	allHandler: any;
-	reactHandler: any;
-	reduxHandler: any;
-	typescriptHandler: any;
-	wordpressHandler: any;
-	firebaseHandler: any;
 	allClasses: string;
+	reactHandler: any;
 	reactClasses: string;
+	reduxHandler: any;
 	reduxClasses: string;
+	typescriptHandler: any;
 	typescriptClasses: string;
-	firebaseClasses: string;
+	wordpressHandler: any;
 	wordpressClasses: string;
+	googleCloudHandler: any;
+	googleCloudClasses: string;
+	firebaseHandler: any;
+	firebaseClasses: string;
+	apiHandler: any;
+	apiClasses: string;
 }
 
 const Filter: React.FC<Props> = (props) => {
@@ -57,12 +63,20 @@ const Filter: React.FC<Props> = (props) => {
 				className={props.wordpressClasses}
 			/>
 			<FilterItem
+				text='Google Cloud'
+				alt='Google Cloud'
+				src={googleCloudIcon}
+				onClick={props.googleCloudHandler}
+				className={props.googleCloudClasses}
+			/>
+			<FilterItem
 				text='Firebase'
 				alt='Firebase'
 				src={firebaseIcon}
 				onClick={props.firebaseHandler}
 				className={props.firebaseClasses}
 			/>
+			<FilterItem text='API' alt='API' src={apiIcon} onClick={props.apiHandler} className={props.apiClasses} />
 		</div>
 	);
 };

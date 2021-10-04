@@ -1,228 +1,113 @@
-import React, { useReducer } from 'react';
+import React, { useEffect, useReducer } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import classes from './Projects.module.scss';
-import ProjectItem from '../components/Projects/ProjectItem';
 import Filter from '../components/Projects/Filter';
-import FilterItem from '../components/Projects/FilterItem';
 
-import reactIcon from '../assets/icons/react.svg';
-import reduxIcon from '../assets/icons/redux.svg';
-import typescriptIcon from '../assets/icons/typescript.svg';
-import wordpressIcon from '../assets/icons/wordpress.svg';
-import firebaseIcon from '../assets/icons/firebase.svg';
-
-let projectsInitial = [
-	{
-		id: '01',
-		name: 'CEGA',
-		description: 'Projet Professionel',
-		technos: [reactIcon, typescriptIcon, reduxIcon],
-	},
-	{
-		id: '02',
-		name: 'Enola Louge',
-		description: 'Projet Professionel',
-		technos: [reactIcon, firebaseIcon],
-	},
-	{
-		id: '03',
-		name: 'Oganiru',
-		description: 'Projet Professionel',
-		technos: [wordpressIcon],
-	},
-	{
-		id: '04',
-		name: 'Mon Portfolio',
-		description: 'Mon Personel',
-		technos: [reactIcon, typescriptIcon, reduxIcon],
-	},
-];
-
-const initialStateReducer = {
-	all: true,
-	react: false,
-	redux: false,
-	typescript: false,
-	firebase: false,
-	wordpress: false,
-};
-
-interface initialStateObj {
-	all: boolean;
-	react: boolean;
-	redux: boolean;
-	typescript: boolean;
-	firebase: boolean;
-	wordpress: boolean;
-}
-
-interface actionObj {
-	type: string;
-}
-
-const filterReducer = (state: initialStateObj, action: actionObj) => {
-	switch (action.type) {
-		case 'REACT':
-			return {
-				...state,
-				react: !state.react,
-			};
-		case 'REDUX':
-			return {
-				...state,
-				redux: !state.redux,
-			};
-		case 'TYPESCRIPT':
-			return {
-				...state,
-				typescript: !state.typescript,
-			};
-		case 'FIREBASE':
-			return {
-				...state,
-				firebase: !state.firebase,
-			};
-		case 'WORDPRESS':
-			return {
-				...state,
-				wordpress: !state.wordpress,
-			};
-		case 'RESET':
-			return {
-				all: true,
-				react: false,
-				redux: false,
-				typescript: false,
-				firebase: false,
-				wordpress: false,
-			};
-	}
-	return state;
-};
+import projectStore from '../store/projects';
+import ContactMe from '../components/_Buttons/ContactMe';
+import { RootState } from '../store/store';
+import ProjectItem from '../components/Projects/ProjectItem';
 
 const Projects: React.FC = () => {
-	const [filter, filterDispatch] = useReducer(filterReducer, initialStateReducer);
+	const dispatch = useDispatch();
+	const filter = useSelector((state: RootState) => state);
 
 	const resetFilter = () => {
-		filterDispatch({ type: 'RESET' });
+		dispatch({ type: 'RESET' });
 	};
 
 	const allHandler = () => {
 		resetFilter();
-		console.log('all ' + filter.all);
+		dispatch({ type: 'ALL' });
 	};
 
 	const reactHandler = () => {
 		resetFilter();
-		filterDispatch({ type: 'REACT' });
-		console.log('react ' + filter.react);
+		dispatch({ type: 'REACT' });
 	};
 
 	const reduxHandler = () => {
 		resetFilter();
-		filterDispatch({ type: 'REDUX' });
-		console.log('wordpress ' + filter.wordpress);
-	};
-
-	const wordpressHandler = () => {
-		resetFilter();
-		filterDispatch({ type: 'WORDPRESS' });
-		console.log('wordpress ' + filter.wordpress);
-	};
-
-	const firebaseHandler = () => {
-		resetFilter();
-		filterDispatch({ type: 'FIREBASE' });
-		console.log('firebase ' + filter.firebase);
+		dispatch({ type: 'REDUX' });
 	};
 
 	const typescriptHandler = () => {
 		resetFilter();
-		filterDispatch({ type: 'TYPESCRIPT' });
-		console.log('typescript ' + filter.typescript);
+		dispatch({ type: 'TYPESCRIPT' });
+	};
+
+	const wordpressHandler = () => {
+		resetFilter();
+		dispatch({ type: 'WORDPRESS' });
+	};
+
+	const firebaseHandler = () => {
+		resetFilter();
+		dispatch({ type: 'FIREBASE' });
+	};
+
+	const googleCloudHandler = () => {
+		resetFilter();
+		dispatch({ type: 'GOOGLECLOUD' });
+	};
+
+	const apiHandler = () => {
+		resetFilter();
+		dispatch({ type: 'API' });
+	};
+
+	const whichTechno = () => {
+		for (const value in filter) {
+			if (filter[value]) {
+				for (let i = 0; i < projectStore.length; i++) {
+					if (projectStore[i].technos.indexOf(value) >= 0) {
+						return value;
+					}
+				}
+			}
+		}
 	};
 
 	let projects;
-
-	if (filter.all) {
-		projects = projectsInitial.map((project) => (
+	if (filter) {
+		projects = projectStore.map((project: any) => (
 			<ProjectItem
 				key={project.id}
+				img={project.img}
 				title={project.name}
 				description={project.description}
-				stack={project.technos}
+				stack={project.technosIcons}
+				website_link={project.website}
+				github_link={project.github}
+				publicGithub={project.publicGithub}
 			/>
 		));
-	}
-	if (filter.all && filter.react) {
-		projects = projectsInitial
-			.filter((project) => project.technos.indexOf(reactIcon) >= 0)
-			.map((project) => (
+	if (filter) {
+		const filteredTechno = whichTechno();
+		projects = projectStore
+			.filter((project: any) => project.technos.indexOf(filteredTechno) >= 0)
+			.map((project: any) => (
 				<ProjectItem
 					key={project.id}
+					img={project.img}
 					title={project.name}
 					description={project.description}
-					stack={project.technos}
-				/>
-			));
-	}
-	if (filter.all && filter.redux) {
-		projects = projectsInitial
-			.filter((project) => project.technos.indexOf(reduxIcon) >= 0)
-			.map((project) => (
-				<ProjectItem
-					key={project.id}
-					title={project.name}
-					description={project.description}
-					stack={project.technos}
-				/>
-			));
-	}
-	if (filter.all && filter.typescript) {
-		projects = projectsInitial
-			.filter((project) => project.technos.indexOf(typescriptIcon) >= 0)
-			.map((project) => (
-				<ProjectItem
-					key={project.id}
-					title={project.name}
-					description={project.description}
-					stack={project.technos}
-				/>
-			));
-	}
-	if (filter.all && filter.wordpress) {
-		projects = projectsInitial
-			.filter((project) => project.technos.indexOf(wordpressIcon) >= 0)
-			.map((project) => (
-				<ProjectItem
-					key={project.id}
-					title={project.name}
-					description={project.description}
-					stack={project.technos}
-				/>
-			));
-	}
-	if (filter.all && filter.firebase) {
-		projects = projectsInitial
-			.filter((project) => project.technos.indexOf(firebaseIcon) >= 0)
-			.map((project) => (
-				<ProjectItem
-					key={project.id}
-					title={project.name}
-					description={project.description}
-					stack={project.technos}
+					stack={project.technosIcons}
+					website_link={project.website}
+					github_link={project.github}
+					publicGithub={project.publicGithub}
 				/>
 			));
 	}
 
-	const allProjectsFilter =
-		!filter.react && !filter.redux && !filter.typescript && !filter.firebase && !filter.wordpress;
-
-	const allClasses = filter.all && allProjectsFilter ? classes.active : '';
+	const allClasses = filter.all ? classes.active : '';
 	const reactClasses = filter.react ? classes.active : '';
 	const reduxClasses = filter.redux ? classes.active : '';
 	const typescriptClasses = filter.typescript ? classes.active : '';
+	const googleCloudClasses = filter.googleCloud ? classes.active : '';
 	const firebaseClasses = filter.firebase ? classes.active : '';
 	const wordpressClasses = filter.wordpress ? classes.active : '';
+	const apiClasses = filter.api ? classes.active : '';
 
 	return (
 		<>
@@ -235,12 +120,17 @@ const Projects: React.FC = () => {
 				reduxClasses={reduxClasses}
 				typescriptHandler={typescriptHandler}
 				typescriptClasses={typescriptClasses}
+				googleCloudHandler={googleCloudHandler}
+				googleCloudClasses={googleCloudClasses}
 				firebaseHandler={firebaseHandler}
 				firebaseClasses={firebaseClasses}
 				wordpressHandler={wordpressHandler}
 				wordpressClasses={wordpressClasses}
+				apiHandler={apiHandler}
+				apiClasses={apiClasses}
 			/>
 			<div className={classes.projects}>{projects}</div>
+			<ContactMe />
 		</>
 	);
 };

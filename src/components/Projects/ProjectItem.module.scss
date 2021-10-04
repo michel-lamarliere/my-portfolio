@@ -3,21 +3,30 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	min-width: 15.1rem;
-	height: 14.45rem;
+	width: 15.1rem;
+	min-height: 14.45rem;
+	margin: 0 auto;
 	background-color: $colorDarkGrey;
 	border-radius: 0.5rem;
+	transition: all ease-in-out 0.3s;
+
+	&:hover {
+		transform: scale(1.05);
+	}
 }
 
 img {
 	border-radius: 0.5rem 0.5rem 0 0;
-	width: 100%;
 	height: 9.5rem;
-	background-color: black;
+	object-fit: cover;
 }
 
 .bottom {
-	margin: 0.6rem;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding: 0.6rem;
 }
 
 .title {
@@ -33,10 +42,39 @@ img {
 }
 
 .stack {
+	display: flex;
+	gap: 0.5rem;
+
 	&_item {
-		width: 0.9rem;
-		height: 0.9rem;
+		width: 1.2rem;
+		height: 1.2rem;
 		background: none;
 		object-fit: contain;
 	}
+}
+
+.links {
+	position: absolute;
+	right: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	& img {
+		display: grid;
+		place-content: center;
+		width: 1.2rem;
+		height: 1.2rem;
+		object-fit: contain;
+		border-radius: 0;
+	}
+}
+
+.empty {
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 0;
 }
