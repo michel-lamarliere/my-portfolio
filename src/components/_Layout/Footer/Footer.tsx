@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import classes from './Footer.module.scss';
 
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 import maltIcon from '../../../assets/icons/malt.svg';
 import githubIcon from '../../../assets/icons/github-white.svg';
+import { RootState } from '../../../store/store';
 
 const Footer: React.FC = () => {
+	const french = useSelector((state: RootState) => state.language.french);
+
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.links}>
@@ -32,22 +36,23 @@ const Footer: React.FC = () => {
 					<img src={githubIcon} alt='' className={classes.links_logo} />
 				</a>
 				<Link to='/legalnotice' className={classes.links_text}>
-					Mentions Légales
+					{french ? 'Mentions Légales' : 'Legal Notice'}
 				</Link>
 			</div>
 			<div className={classes.shoutout}>
-				Par&nbsp;<span className={classes.shoutout_link}>Michel Lamarlière</span>
+				{french ? 'Par' : 'By'}
+				<span className={classes.shoutout_link}>&nbsp;Michel Lamarlière</span>
 			</div>
 			<div className={classes.shoutout}>
 				<div>
-					Logo et Web Design par&nbsp;
+					{french ? 'Logo et Web Design par' : 'Logo et Web Design by'}
 					<a
 						href='http://www.enolalouge.com'
 						target='_blank'
 						rel='noreferrer'
 						className={classes.shoutout_link}
 					>
-						Enola Louge
+						&nbsp;Enola Louge
 					</a>
 				</div>
 			</div>

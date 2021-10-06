@@ -1,0 +1,13 @@
+@import '../../../variables.scss';
+
+.overlay {
+	position: fixed;
+	bottom: -10rem;
+	right: -10rem;
+	width: 20.5rem;
+	height: 20.5rem;
+	border-radius: 50%;
+	background-color: $colorLightGrey;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	z-index: 2;
+}

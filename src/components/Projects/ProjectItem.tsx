@@ -17,7 +17,7 @@ interface Props {
 const ProjectItem: React.FC<Props> = (props) => {
 	return (
 		<div className={classes.wrapper}>
-			<img src={props.img} alt={props.title} />
+			<img className={classes.main_img} src={props.img} alt={props.title} />
 			<div className={classes.bottom}>
 				<div className={classes.title}>{props.title}</div>
 				<div className={classes.description}>{props.description}</div>

@@ -1,0 +1,41 @@
+@import '../../variables.scss';
+
+.wrapper {
+	height: calc(100vh);
+	margin-top: -4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo {
+	fill: $colorWhite;
+	height: 1.85rem;
+}
+
+.name {
+	font-family: $fontBold;
+	font-size: 32px;
+	color: $colorWhite;
+}
+
+.title {
+	font-family: $fontBold;
+	font-size: 15px;
+	color: $colorWhite;
+}
+
+.slide {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: grid;
+	place-items: center;
+
+	& img {
+		width: 3.5rem;
+		height: 3.5rem;
+	}
+}

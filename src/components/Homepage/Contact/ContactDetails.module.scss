@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.text {
+	font-size: 17px;
+	color: $colorWhite;
+}

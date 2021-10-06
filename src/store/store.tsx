@@ -1,95 +1,19 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
-const initialStateReducer = {
-	all: true,
-	react: false,
-	redux: false,
-	typescript: false,
-	firebase: false,
-	googleCloud: false,
-	wordpress: false,
-	api: false,
-};
+import filterReducer from './filter';
+import languageReducer from './language';
+import mobileMenuReducer from './mobileMenu';
+import themeReducer from './theme';
 
-interface initialStateObj {
-	all: boolean;
-	react: boolean;
-	redux: boolean;
-	typescript: boolean;
-	firebase: boolean;
-	googleCloud: boolean;
-	wordpress: boolean;
-	api: boolean;
-}
-
-interface actionObj {
-	type: string;
-}
-
-const filterReducer = (
-	state: initialStateObj = initialStateReducer,
-	action: actionObj
-) => {
-	switch (action.type) {
-		case 'ALL':
-			return {
-				...state,
-				all: !state.all,
-			};
-		case 'REACT':
-			return {
-				...state,
-				react: !state.react,
-			};
-		case 'REDUX':
-			return {
-				...state,
-				redux: !state.redux,
-			};
-		case 'TYPESCRIPT':
-			return {
-				...state,
-				typescript: !state.typescript,
-			};
-		case 'FIREBASE':
-			return {
-				...state,
-				firebase: !state.firebase,
-			};
-		case 'GOOGLECLOUD':
-			return {
-				...state,
-				googleCloud: !state.googleCloud,
-			};
-		case 'WORDPRESS':
-			return {
-				...state,
-				wordpress: !state.wordpress,
-			};
-		case 'API':
-			return {
-				...state,
-				api: !state.api,
-			};
-		case 'RESET':
-			return {
-				all: false,
-				react: false,
-				redux: false,
-				typescript: false,
-				googleCloud: false,
-				firebase: false,
-				wordpress: false,
-				api: false,
-			};
-		default:
-			return state;
-	}
-};
-
-const store = createStore(filterReducer);
+const store = createStore(
+	combineReducers({
+		filter: filterReducer,
+		mobileMenu: mobileMenuReducer,
+		language: languageReducer,
+		theme: themeReducer,
+	})
+);
 export type RootState = ReturnType<typeof store.getState>;
 
-console.log(store);
 export default store;

@@ -1,17 +1,18 @@
 @import './variables.scss';
 
 #root {
-	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	font-family: $fontMedium;
 }
 
 html {
 	font-size: 20px;
-	font-family: $fontMedium;
 }
 
 body {
+	height: 100vh;
+	width: 100vw;
 	margin: 0;
 	background-color: $colorVeryDarkGrey;
 }
@@ -19,4 +20,7 @@ body {
 a {
 	color: inherit;
 	text-decoration: none;
+}
+
+input {
 }

@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.wrapper {
+	width: 80%;
+	margin: 0 auto 0 auto;
+}
+
+.img {
+	width: 100%;
+}
+
+.text {
+	font-family: $fontLight;
+	font-size: 16px;
+	color: $colorWhite;
+}

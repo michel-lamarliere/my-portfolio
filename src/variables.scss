@@ -4,6 +4,11 @@
 }
 
 @font-face {
+	font-family: Poppins-Bold;
+	src: url('./assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
 	font-family: Poppins-Semi-Bold;
 	src: url('./assets/fonts/Poppins-SemiBold.ttf');
 }
@@ -19,6 +24,7 @@
 }
 
 $fontMedium: Poppins-Medium;
+$fontBold: Poppins-Bold;
 $fontSemiBold: Poppins-Semi-Bold;
 $fontMediumItalic: Poppins-Medium-Italic;
 $fontLight: Poppins-Light;

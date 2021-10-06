@@ -19,6 +19,7 @@ const projectStore = [
 		technosIcons: [reactIcon, reduxIcon, typescriptIcon],
 		website: 'http://cega-audit.com',
 		github: 'https://github.com/michel-lamarliere/cega',
+		firstPage: true,
 	},
 	{
 		id: '02',
@@ -30,6 +31,7 @@ const projectStore = [
 		website: 'https://enolalouge.com',
 		github: '',
 		publicGithub: false,
+		firstPage: true,
 	},
 	{
 		id: '03',
@@ -51,6 +53,7 @@ const projectStore = [
 		technosIcons: [reactIcon, reduxIcon, typescriptIcon],
 		website: 'https://michel-lamarliere.com',
 		github: '',
+		firstPage: true,
 	},
 	{
 		id: '05',

@@ -3,14 +3,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import classes from './Projects.module.scss';
 import Filter from '../components/Projects/Filter';
 
-import projectStore from '../store/projects';
-import ContactMe from '../components/_Buttons/ContactMe';
+import projectStore from '../store/projectsStore';
+import { ContactBtn } from '../components/_UI/Buttons';
 import { RootState } from '../store/store';
 import ProjectItem from '../components/Projects/ProjectItem';
 
 const Projects: React.FC = () => {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	const dispatch = useDispatch();
-	const filter = useSelector((state: RootState) => state);
+	const filter = useSelector((state: RootState) => state.filter);
 
 	const resetFilter = () => {
 		dispatch({ type: 'RESET' });
@@ -57,11 +61,11 @@ const Projects: React.FC = () => {
 	};
 
 	const whichTechno = () => {
-		for (const value in filter) {
-			if (filter[value]) {
+		for (const key in filter) {
+			if (filter[key]) {
 				for (let i = 0; i < projectStore.length; i++) {
-					if (projectStore[i].technos.indexOf(value) >= 0) {
-						return value;
+					if (projectStore[i].technos.indexOf(key) >= 0) {
+						return key;
 					}
 				}
 			}
@@ -69,7 +73,7 @@ const Projects: React.FC = () => {
 	};
 
 	let projects;
-	if (filter) {
+	if (filter.all) {
 		projects = projectStore.map((project: any) => (
 			<ProjectItem
 				key={project.id}
@@ -82,7 +86,7 @@ const Projects: React.FC = () => {
 				publicGithub={project.publicGithub}
 			/>
 		));
-	if (filter) {
+	} else {
 		const filteredTechno = whichTechno();
 		projects = projectStore
 			.filter((project: any) => project.technos.indexOf(filteredTechno) >= 0)
@@ -130,7 +134,7 @@ const Projects: React.FC = () => {
 				apiClasses={apiClasses}
 			/>
 			<div className={classes.projects}>{projects}</div>
-			<ContactMe />
+			<ContactBtn />
 		</>
 	);
 };

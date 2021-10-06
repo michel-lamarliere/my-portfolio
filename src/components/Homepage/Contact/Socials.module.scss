@@ -1,0 +1,18 @@
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.title_lign {
+	margin-top: 0rem !important;
+}
+
+.socials {
+	display: flex;
+	justify-content: space-between;
+
+	&_logo {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+}
