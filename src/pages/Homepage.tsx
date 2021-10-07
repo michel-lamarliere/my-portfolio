@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef } from 'react';
+import { Link, Route } from 'react-router-dom';
 import About from '../components/Homepage/About';
 import Arrival from '../components/Homepage/Arrival';
 import HomeProjects from '../components/Homepage/HomeProjects';
@@ -11,14 +11,22 @@ import { SeeMore } from '../components/_UI/Buttons';
 import classes from './Homepage.module.scss';
 
 const Homepage: React.FC = () => {
+	const stack = useRef<HTMLDivElement>(null);
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
+	const arrowHandler = () => {
+		if (stack.current) {
+			stack.current.scrollIntoView();
+		}
+	};
+
 	return (
 		<>
-			<Arrival />
-			<Stack />
+			<Arrival arrowHandler={arrowHandler} />
+			<Stack ref={stack} />
 			<About />
 			<HomeProjects />
 			<SeeMore />

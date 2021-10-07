@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './ProjectItem.module.scss';
 
-import githubIcon from '../../assets/icons/github-white.svg';
+import githubIcon from '../../assets/icons/github.svg';
 import openTabIcon from '../../assets/icons/open-tab.svg';
 
 interface Props {

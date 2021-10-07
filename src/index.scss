@@ -8,6 +8,7 @@
 
 html {
 	font-size: 20px;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -22,5 +23,17 @@ a {
 	text-decoration: none;
 }
 
-input {
+input,
+textarea {
+	border: 0;
+	padding: 0;
+
+	&:focus {
+		outline: none;
+		resize: none;
+	}
+}
+
+button {
+	border: 0;
 }

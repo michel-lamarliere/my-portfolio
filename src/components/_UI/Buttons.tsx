@@ -1,16 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import classes from './Buttons.module.scss';
 
 export const ContactBtn: React.FC = () => {
+	const history = useHistory();
 	const french = useSelector((state: RootState) => state.language.french);
 
+	const goToForm = () => {
+		history.push('/');
+	};
+
 	return (
-		<a href='#contact' className={classes.wrapper}>
+		<div className={classes.wrapper} onClick={goToForm}>
 			{french ? 'Me Contacter' : 'Contact Me'}
-		</a>
+		</div>
 	);
 };
 

@@ -17,6 +17,7 @@
 .name {
 	font-family: $fontBold;
 	font-size: 32px;
+	text-align: center;
 	color: $colorWhite;
 }
 
@@ -35,7 +36,7 @@
 	place-items: center;
 
 	& img {
-		width: 3.5rem;
-		height: 3.5rem;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 }

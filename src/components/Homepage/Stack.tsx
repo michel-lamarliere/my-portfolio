@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classes from './Stack.module.scss';
 import StackItem from './StackItem';
 
@@ -19,11 +19,11 @@ import TitleLign from '../_UI/TitleLign';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
 
-const Stack: React.FC = () => {
+const Stack = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const french = useSelector((state: RootState) => state.language.french);
 
 	return (
-		<div className={classes.wrapper}>
+		<div className={classes.wrapper} ref={ref}>
 			<TitleLign text={french ? 'Mes compétences' : 'My Stack'} />
 			<div className={classes.stack}>
 				<StackItem img={htmlIcon} alt='html' text='HTML' />
@@ -42,6 +42,6 @@ const Stack: React.FC = () => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default Stack;

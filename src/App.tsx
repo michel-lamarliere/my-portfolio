@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import classes from './App.module.scss';
 
 import Layout from './components/_Layout/Layout';
@@ -14,6 +14,9 @@ const App: React.FC = () => {
 			<Overlay />
 			<Switch>
 				<Route path='/' exact>
+					<Redirect to='/home' />
+				</Route>
+				<Route path='/home'>
 					<Homepage />
 				</Route>
 				<Route path='/projects'>

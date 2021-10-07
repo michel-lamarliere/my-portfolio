@@ -3,106 +3,24 @@ import { useSelector, useDispatch } from 'react-redux';
 import classes from './Projects.module.scss';
 import Filter from '../components/Projects/Filter';
 
-import projectStore from '../store/projectsStore';
 import { ContactBtn } from '../components/_UI/Buttons';
 import { RootState } from '../store/store';
-import ProjectItem from '../components/Projects/ProjectItem';
+import { useProjects } from '../hooks/use-projects';
 
 const Projects: React.FC = () => {
+	const dispatch = useDispatch();
+	const filter = useSelector((state: RootState) => state.filter);
+
+	let projects = useProjects('PROJECTS');
+
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
 
-	const dispatch = useDispatch();
-	const filter = useSelector((state: RootState) => state.filter);
-
-	const resetFilter = () => {
+	const filterHandler = (action: string) => {
 		dispatch({ type: 'RESET' });
+		dispatch({ type: action });
 	};
-
-	const allHandler = () => {
-		resetFilter();
-		dispatch({ type: 'ALL' });
-	};
-
-	const reactHandler = () => {
-		resetFilter();
-		dispatch({ type: 'REACT' });
-	};
-
-	const reduxHandler = () => {
-		resetFilter();
-		dispatch({ type: 'REDUX' });
-	};
-
-	const typescriptHandler = () => {
-		resetFilter();
-		dispatch({ type: 'TYPESCRIPT' });
-	};
-
-	const wordpressHandler = () => {
-		resetFilter();
-		dispatch({ type: 'WORDPRESS' });
-	};
-
-	const firebaseHandler = () => {
-		resetFilter();
-		dispatch({ type: 'FIREBASE' });
-	};
-
-	const googleCloudHandler = () => {
-		resetFilter();
-		dispatch({ type: 'GOOGLECLOUD' });
-	};
-
-	const apiHandler = () => {
-		resetFilter();
-		dispatch({ type: 'API' });
-	};
-
-	const whichTechno = () => {
-		for (const key in filter) {
-			if (filter[key]) {
-				for (let i = 0; i < projectStore.length; i++) {
-					if (projectStore[i].technos.indexOf(key) >= 0) {
-						return key;
-					}
-				}
-			}
-		}
-	};
-
-	let projects;
-	if (filter.all) {
-		projects = projectStore.map((project: any) => (
-			<ProjectItem
-				key={project.id}
-				img={project.img}
-				title={project.name}
-				description={project.description}
-				stack={project.technosIcons}
-				website_link={project.website}
-				github_link={project.github}
-				publicGithub={project.publicGithub}
-			/>
-		));
-	} else {
-		const filteredTechno = whichTechno();
-		projects = projectStore
-			.filter((project: any) => project.technos.indexOf(filteredTechno) >= 0)
-			.map((project: any) => (
-				<ProjectItem
-					key={project.id}
-					img={project.img}
-					title={project.name}
-					description={project.description}
-					stack={project.technosIcons}
-					website_link={project.website}
-					github_link={project.github}
-					publicGithub={project.publicGithub}
-				/>
-			));
-	}
 
 	const allClasses = filter.all ? classes.active : '';
 	const reactClasses = filter.react ? classes.active : '';
@@ -115,27 +33,30 @@ const Projects: React.FC = () => {
 
 	return (
 		<>
-			<Filter
-				allHandler={allHandler}
-				allClasses={allClasses}
-				reactHandler={reactHandler}
-				reactClasses={reactClasses}
-				reduxHandler={reduxHandler}
-				reduxClasses={reduxClasses}
-				typescriptHandler={typescriptHandler}
-				typescriptClasses={typescriptClasses}
-				googleCloudHandler={googleCloudHandler}
-				googleCloudClasses={googleCloudClasses}
-				firebaseHandler={firebaseHandler}
-				firebaseClasses={firebaseClasses}
-				wordpressHandler={wordpressHandler}
-				wordpressClasses={wordpressClasses}
-				apiHandler={apiHandler}
-				apiClasses={apiClasses}
-			/>
-			<div className={classes.projects}>{projects}</div>
+			<div className={classes.wrapper}>
+				<Filter
+					allHandler={() => filterHandler('ALL')}
+					allClasses={allClasses}
+					reactHandler={() => filterHandler('REACT')}
+					reactClasses={reactClasses}
+					reduxHandler={() => filterHandler('REDUX')}
+					reduxClasses={reduxClasses}
+					typescriptHandler={() => filterHandler('TYPESCRIPT')}
+					typescriptClasses={typescriptClasses}
+					googleCloudHandler={() => filterHandler('GOOGLECLOUD')}
+					googleCloudClasses={googleCloudClasses}
+					firebaseHandler={() => filterHandler('FIREBASE')}
+					firebaseClasses={firebaseClasses}
+					wordpressHandler={() => filterHandler('WORDPRESS')}
+					wordpressClasses={wordpressClasses}
+					apiHandler={() => filterHandler('API')}
+					apiClasses={apiClasses}
+				/>
+				<div className={classes.projects}>{projects}</div>
+			</div>
 			<ContactBtn />
 		</>
 	);
 };
+
 export default Projects;

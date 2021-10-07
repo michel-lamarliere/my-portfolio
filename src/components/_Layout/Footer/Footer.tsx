@@ -5,7 +5,7 @@ import classes from './Footer.module.scss';
 
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 import maltIcon from '../../../assets/icons/malt.svg';
-import githubIcon from '../../../assets/icons/github-white.svg';
+import githubIcon from '../../../assets/icons/github.svg';
 import { RootState } from '../../../store/store';
 
 const Footer: React.FC = () => {
