@@ -193,7 +193,7 @@ const Form: React.FC = () => {
 					<div className={classes.invalid_text}>
 						{french
 							? 'Veuillez entrer au moins 10 caractères.'
-							: 'Please enter at least 10 characters'}
+							: 'Please enter at least 10 characters.'}
 					</div>
 				)}
 				<button
@@ -202,7 +202,7 @@ const Form: React.FC = () => {
 					type='submit'
 					className={classes.submit}
 				>
-					Envoyer
+					{french ? 'Envoyer' : 'Submit'}
 				</button>
 				{sent && (
 					<div className={classes.sent}>

@@ -8,13 +8,9 @@
 }
 
 .stack {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	gap: 1rem;
-	margin: 0 auto;
-
-	&:last-of-type {
-		justify-self: flex-start;
-	}
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 4.2rem);
+	justify-content: space-around;
+	column-gap: 1rem;
+	row-gap: 1.5rem;
 }

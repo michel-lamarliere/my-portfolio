@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import classes from './Projects.module.scss';
 import Filter from '../components/Projects/Filter';
@@ -12,10 +12,6 @@ const Projects: React.FC = () => {
 	const filter = useSelector((state: RootState) => state.filter);
 
 	let projects = useProjects('PROJECTS');
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
 
 	const filterHandler = (action: string) => {
 		dispatch({ type: 'RESET' });

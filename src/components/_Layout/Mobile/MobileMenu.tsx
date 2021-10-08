@@ -5,6 +5,9 @@ import { RootState } from '../../../store/store';
 import LogoML from '../../_UI/LogoML';
 import classes from './MobileMenu.module.scss';
 
+import enLogo from '../../../assets/icons/english.svg';
+import frLogo from '../../../assets/icons/francais.svg';
+
 const MobileMenu: React.FC = () => {
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
 	const french = useSelector((state: RootState) => state.language.french);
@@ -14,18 +17,18 @@ const MobileMenu: React.FC = () => {
 	let link;
 	let path = '';
 
-	if (location === '/' && french) {
+	if (location === '/home' && french) {
 		link = 'Projets';
 		path = '/projects';
-	} else if (location === '/' && !french) {
+	} else if (location === '/home' && !french) {
 		link = 'Projects';
 		path = '/projects';
 	} else if (french) {
 		link = 'Accueil';
-		path = '/';
+		path = '/home';
 	} else if (!french) {
 		link = 'Home';
-		path = '/';
+		path = '/home';
 	}
 
 	const mobileMenuHandler = () => {
@@ -33,6 +36,12 @@ const MobileMenu: React.FC = () => {
 	};
 
 	const languageHandler = () => {
+		if (!french) {
+			localStorage.setItem('language', 'french');
+		}
+		if (french) {
+			localStorage.setItem('language', 'english');
+		}
 		dispatch({ type: 'LANGUAGE TOGGLE' });
 	};
 
@@ -47,14 +56,23 @@ const MobileMenu: React.FC = () => {
 			</div>
 			{opened && (
 				<>
-					<Link to={path} className={classes.link} onClick={mobileMenuHandler}>
-						{link}
-					</Link>
-					<div className={classes.language} onClick={languageHandler}>
-						<img src={''} alt='L' />
-					</div>
-					<div className={classes.theme} onClick={themeHandler}>
-						<img src={''} alt='T' />
+					<div className={classes.wrapper}>
+						<Link
+							to={path}
+							className={classes.link}
+							onClick={mobileMenuHandler}
+						>
+							{link}
+						</Link>
+						<div className={classes.language} onClick={languageHandler}>
+							<img
+								src={french ? enLogo : frLogo}
+								alt={french ? 'English' : 'Français'}
+							/>
+						</div>
+						<div className={classes.theme} onClick={themeHandler}>
+							<img src={''} alt='T' />
+						</div>
 					</div>
 				</>
 			)}

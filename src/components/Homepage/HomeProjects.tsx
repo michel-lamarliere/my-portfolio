@@ -4,7 +4,6 @@ import { RootState } from '../../store/store';
 import classes from './HomeProjects.module.scss';
 
 import TitleLign from '../_UI/TitleLign';
-import ProjectItem from '../Projects/ProjectItem';
 import { useProjects } from '../../hooks/use-projects';
 
 const HomeProjects: React.FC = () => {

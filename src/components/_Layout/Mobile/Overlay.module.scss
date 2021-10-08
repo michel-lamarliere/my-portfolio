@@ -2,12 +2,11 @@
 
 .overlay {
 	position: fixed;
-	bottom: -10rem;
-	right: -10rem;
-	width: 20.5rem;
-	height: 20.5rem;
-	border-radius: 50%;
-	background-color: $colorLightGrey;
-	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.125);
+	transition: all 0.3s ease-in-out;
 	z-index: 2;
 }

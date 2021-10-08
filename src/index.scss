@@ -1,9 +1,5 @@
 @import './variables.scss';
 
-* {
-	-webkit-overflow-scrolling: touch;
-}
-
 #root {
 	display: flex;
 	flex-direction: column;
@@ -12,8 +8,6 @@
 
 html {
 	font-size: 20px;
-	scroll-behavior: smooth;
-	--scroll-behavior: smooth;
 }
 
 body {

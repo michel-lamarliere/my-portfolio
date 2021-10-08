@@ -12,10 +12,6 @@ import classes from './Homepage.module.scss';
 const Homepage: React.FC = () => {
 	const stack = useRef<HTMLDivElement>(null);
 
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
-
 	const arrowHandler = () => {
 		if (stack.current) {
 			stack.current.scrollIntoView({

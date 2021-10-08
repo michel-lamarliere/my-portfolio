@@ -7,9 +7,11 @@ import reactIcon from '../../assets/icons/react.svg';
 import reduxIcon from '../../assets/icons/redux.svg';
 import typescriptIcon from '../../assets/icons/typescript.svg';
 import wordpressIcon from '../../assets/icons/wordpress.svg';
-import googleCloudIcon from '../../assets/icons/google.svg';
+import googleCloudIcon from '../../assets/icons/googlecloud.svg';
 import firebaseIcon from '../../assets/icons/firebase.svg';
 import apiIcon from '../../assets/icons/api.svg';
+import { RootState } from '../../store/store';
+import { useSelector } from 'react-redux';
 
 interface Props {
 	allHandler: any;
@@ -31,9 +33,16 @@ interface Props {
 }
 
 const Filter: React.FC<Props> = (props) => {
+	const french = useSelector((state: RootState) => state.language.french);
+
 	return (
 		<div className={classes.wrapper}>
-			<FilterItem text='Tout' logo={false} onClick={props.allHandler} className={props.allClasses} />
+			<FilterItem
+				text={french ? 'Tout' : 'All'}
+				logo={false}
+				onClick={props.allHandler}
+				className={props.allClasses}
+			/>
 			<FilterItem
 				text='React'
 				alt='React'
@@ -76,7 +85,13 @@ const Filter: React.FC<Props> = (props) => {
 				onClick={props.firebaseHandler}
 				className={props.firebaseClasses}
 			/>
-			<FilterItem text='API' alt='API' src={apiIcon} onClick={props.apiHandler} className={props.apiClasses} />
+			<FilterItem
+				text='API'
+				alt='API'
+				src={apiIcon}
+				onClick={props.apiHandler}
+				className={props.apiClasses}
+			/>
 		</div>
 	);
 };

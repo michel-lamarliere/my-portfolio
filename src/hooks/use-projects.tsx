@@ -8,7 +8,7 @@ import reactIcon from '../assets/icons/react.svg';
 import reduxIcon from '../assets/icons/redux.svg';
 import typescriptIcon from '../assets/icons/typescript.svg';
 import wordpressIcon from '../assets/icons/wordpress.svg';
-import googleCloudIcon from '../assets/icons/google.svg';
+import googleCloudIcon from '../assets/icons/googlecloud.svg';
 import firebaseIcon from '../assets/icons/firebase.svg';
 import apiIcon from '../assets/icons/api.svg';
 
@@ -22,7 +22,7 @@ export const useProjects = (fn: string) => {
 	let perso = 'Projet Personnel';
 
 	if (!french) {
-		pro = 'Profesional Project';
+		pro = 'Professional Project';
 		perso = 'Personal Project';
 	}
 
@@ -52,7 +52,7 @@ export const useProjects = (fn: string) => {
 		},
 		{
 			id: '03',
-			name: 'Oganiru',
+			name: 'Oganiru Law',
 			description: pro,
 			img: CegaImg,
 			technos: ['wordpress'],
@@ -74,7 +74,7 @@ export const useProjects = (fn: string) => {
 		},
 		{
 			id: '05',
-			name: 'Appli Méteo',
+			name: french ? 'Appli Méteo' : 'Weather App',
 			description: perso,
 			img: CegaImg,
 			technos: ['react', 'googleCloud', 'api'],
