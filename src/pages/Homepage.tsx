@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Link, Route } from 'react-router-dom';
 import About from '../components/Homepage/About';
 import Arrival from '../components/Homepage/Arrival';
 import HomeProjects from '../components/Homepage/HomeProjects';
@@ -19,7 +18,9 @@ const Homepage: React.FC = () => {
 
 	const arrowHandler = () => {
 		if (stack.current) {
-			stack.current.scrollIntoView();
+			stack.current.scrollIntoView({
+				behavior: 'smooth',
+			});
 		}
 	};
 
