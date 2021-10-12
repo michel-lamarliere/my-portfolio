@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
+import { useTransition, animated } from 'react-spring';
 import { RootState } from '../../../store/store';
 import LogoML from '../../_UI/LogoML';
 import classes from './MobileMenu.module.scss';
+import './MobileMenu.module.scss';
 
 import enLogo from '../../../assets/icons/english.svg';
 import frLogo from '../../../assets/icons/francais.svg';
 
 const MobileMenu: React.FC = () => {
+	const dispatch = useDispatch();
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
 	const french = useSelector((state: RootState) => state.language.french);
-	const dispatch = useDispatch();
 	const location = useLocation().pathname;
+	const transition = useTransition(opened, {
+		from: { y: 150, x: 150, opacity: 0 },
+		enter: { y: 0, x: 0, opacity: 1 },
+		leave: { y: 150, x: 150, opacity: 0 },
+	});
 
-	let link;
+	let link = '';
 	let path = '';
 
 	if (location === '/home' && french) {
@@ -51,30 +58,39 @@ const MobileMenu: React.FC = () => {
 
 	return (
 		<>
-			<div className={classes.trigger_button} onClick={mobileMenuHandler}>
+			<button
+				className={classes.trigger_button}
+				onClick={() => mobileMenuHandler()}
+			>
 				<LogoML className={classes.trigger_button_logo} />
-			</div>
-			{opened && (
-				<>
-					<div className={classes.wrapper}>
-						<Link
-							to={path}
-							className={classes.link}
-							onClick={mobileMenuHandler}
-						>
-							{link}
-						</Link>
-						<div className={classes.language} onClick={languageHandler}>
-							<img
-								src={french ? enLogo : frLogo}
-								alt={french ? 'English' : 'Français'}
-							/>
-						</div>
-						<div className={classes.theme} onClick={themeHandler}>
-							<img src={''} alt='T' />
-						</div>
-					</div>
-				</>
+			</button>
+			{transition(
+				(styles, item) =>
+					item && (
+						<animated.div className={classes.wrapper} style={styles}>
+							<>
+								<Link
+									to={path}
+									className={classes.link}
+									onClick={mobileMenuHandler}
+								>
+									{link}
+								</Link>
+								<div
+									className={classes.language}
+									onClick={languageHandler}
+								>
+									<img
+										src={french ? enLogo : frLogo}
+										alt={french ? 'English' : 'Français'}
+									/>
+								</div>
+								<div className={classes.theme} onClick={themeHandler}>
+									<img src={''} alt='T' />
+								</div>
+							</>
+						</animated.div>
+					)
 			)}
 		</>
 	);

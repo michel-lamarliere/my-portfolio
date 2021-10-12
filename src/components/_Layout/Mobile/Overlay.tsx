@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classes from './Overlay.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { useTransition, animated } from 'react-spring';
 import { RootState } from '../../../store/store';
 import MobileMenu from './MobileMenu';
 
@@ -8,6 +9,11 @@ const Overlay: React.FC = () => {
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
 	const [scrolled, setScrolled] = useState(false);
 	const dispatch = useDispatch();
+	const transition = useTransition(opened, {
+		from: { opacity: 0 },
+		enter: { opacity: 0.25 },
+		leave: { opacity: 0 },
+	});
 
 	useEffect(() => {
 		window.onscroll = () => {
@@ -22,13 +28,17 @@ const Overlay: React.FC = () => {
 
 	return (
 		<>
-			{opened && (
-				<div
-					className={classes.overlay}
-					onClick={() => dispatch({ type: 'OVERLAY TOGGLE' })}
-				>
-					<MobileMenu />
-				</div>
+			{transition(
+				(styles, item) =>
+					item && (
+						<animated.div
+							className={classes.overlay}
+							onClick={() => dispatch({ type: 'OVERLAY TOGGLE' })}
+							style={styles}
+						>
+							<MobileMenu />
+						</animated.div>
+					)
 			)}
 		</>
 	);

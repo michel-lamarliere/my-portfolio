@@ -9,9 +9,8 @@ import { useProjects } from '../hooks/use-projects';
 
 const Projects: React.FC = () => {
 	const dispatch = useDispatch();
+	const projects = useProjects('PROJECTS');
 	const filter = useSelector((state: RootState) => state.filter);
-
-	let projects = useProjects('PROJECTS');
 
 	const filterHandler = (action: string) => {
 		dispatch({ type: 'RESET' });
