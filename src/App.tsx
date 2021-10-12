@@ -7,6 +7,7 @@ import MobileMenu from './components/_Layout/Mobile/MobileMenu';
 import Overlay from './components/_Layout/Mobile/Overlay';
 import Homepage from './pages/Homepage';
 import Projects from './pages/Projects';
+import Error from './pages/Error';
 import ScrollToTop from './ScrollToTop';
 import { RootState } from './store/store';
 
@@ -41,6 +42,9 @@ const App: React.FC = () => {
 				</Route>
 				<Route path='/projects'>
 					<Projects />
+				</Route>
+				<Route path='*'>
+					<Error />
 				</Route>
 			</Switch>
 			<MobileMenu />

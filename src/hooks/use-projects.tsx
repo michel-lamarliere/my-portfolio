@@ -71,6 +71,7 @@ export const useProjects = (fn: string) => {
 			website: 'https://michel-lamarliere.com',
 			github: '',
 			firstPage: true,
+			goToWebsite: false,
 		},
 		{
 			id: '05',
@@ -85,21 +86,26 @@ export const useProjects = (fn: string) => {
 		},
 	];
 
+	const newProjectItem = (project: any) => {
+		return (
+			<ProjectItem
+				key={project.id}
+				img={project.img}
+				title={project.name}
+				description={project.description}
+				stack={project.technosIcons}
+				websiteLink={project.website}
+				githubLink={project.github}
+				publicGithub={project.publicGithub}
+				goToWebsite={project.goToWebsite}
+			/>
+		);
+	};
+
 	if (fn === 'HOMEPAGE') {
 		return projectStore
 			.filter((project) => project.firstPage === true)
-			.map((project) => (
-				<ProjectItem
-					key={project.id}
-					img={project.img}
-					title={project.name}
-					description={project.description}
-					stack={project.technosIcons}
-					website_link={project.website}
-					github_link={project.github}
-					publicGithub={project.publicGithub}
-				/>
-			));
+			.map((project) => newProjectItem(project));
 	}
 
 	const whichTechno = () => {
@@ -117,18 +123,7 @@ export const useProjects = (fn: string) => {
 	if (fn === 'PROJECTS') {
 		const filteredTechno = whichTechno();
 		if (filter.all) {
-			return projectStore.map((project: any) => (
-				<ProjectItem
-					key={project.id}
-					img={project.img}
-					title={project.name}
-					description={project.description}
-					stack={project.technosIcons}
-					website_link={project.website}
-					github_link={project.github}
-					publicGithub={project.publicGithub}
-				/>
-			));
+			return projectStore.map((project: any) => newProjectItem(project));
 		} else if (
 			projectStore.filter(
 				(project: any) => project.technos.indexOf(filteredTechno) >= 0
@@ -136,18 +131,7 @@ export const useProjects = (fn: string) => {
 		) {
 			return projectStore
 				.filter((project: any) => project.technos.indexOf(filteredTechno) >= 0)
-				.map((project: any) => (
-					<ProjectItem
-						key={project.id}
-						img={project.img}
-						title={project.name}
-						description={project.description}
-						stack={project.technosIcons}
-						website_link={project.website}
-						github_link={project.github}
-						publicGithub={project.publicGithub}
-					/>
-				));
+				.map((project: any) => newProjectItem(project));
 		}
 	}
 };

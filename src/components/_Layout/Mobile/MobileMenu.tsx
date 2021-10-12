@@ -68,27 +68,22 @@ const MobileMenu: React.FC = () => {
 				(styles, item) =>
 					item && (
 						<animated.div className={classes.wrapper} style={styles}>
-							<>
-								<Link
-									to={path}
-									className={classes.link}
-									onClick={mobileMenuHandler}
-								>
-									{link}
-								</Link>
-								<div
-									className={classes.language}
-									onClick={languageHandler}
-								>
-									<img
-										src={french ? enLogo : frLogo}
-										alt={french ? 'English' : 'Français'}
-									/>
-								</div>
-								<div className={classes.theme} onClick={themeHandler}>
-									<img src={''} alt='T' />
-								</div>
-							</>
+							<Link
+								to={path}
+								className={classes.link}
+								onClick={mobileMenuHandler}
+							>
+								{link}
+							</Link>
+							<div className={classes.language} onClick={languageHandler}>
+								<img
+									src={french ? enLogo : frLogo}
+									alt={french ? 'English' : 'Français'}
+								/>
+							</div>
+							<div className={classes.theme} onClick={themeHandler}>
+								<img src={''} alt='T' />
+							</div>
 						</animated.div>
 					)
 			)}

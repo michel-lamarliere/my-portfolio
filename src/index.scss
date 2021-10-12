@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 #root {
+	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	font-family: $fontMedium;
@@ -35,4 +36,5 @@ textarea {
 
 button {
 	border: 0;
+	padding: 0;
 }

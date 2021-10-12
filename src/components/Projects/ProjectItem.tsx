@@ -9,9 +9,10 @@ interface Props {
 	img: string;
 	description: string;
 	stack: string[];
-	website_link: string;
-	github_link: string;
+	websiteLink: string;
+	githubLink: string;
 	publicGithub?: boolean;
+	goToWebsite?: boolean;
 }
 
 const ProjectItem: React.FC<Props> = (props) => {
@@ -28,15 +29,19 @@ const ProjectItem: React.FC<Props> = (props) => {
 				</div>
 				<div className={classes.links}>
 					{props.publicGithub ? (
-						<a href={props.github_link} target='_blank' rel='noreferrer'>
+						<a href={props.githubLink} target='_blank' rel='noreferrer'>
 							<img src={githubIcon} alt='github link' />
 						</a>
 					) : (
 						<div className={classes.empty}></div>
 					)}
-					<a href={props.website_link} target='_blank' rel='noreferrer'>
-						<img src={openTabIcon} alt='new tab link' />
-					</a>
+					{props.goToWebsite ? (
+						<a href={props.websiteLink} target='_blank' rel='noreferrer'>
+							<img src={openTabIcon} alt='new tab link' />
+						</a>
+					) : (
+						<div className={classes.empty}></div>
+					)}
 				</div>
 			</div>
 		</div>
@@ -45,6 +50,7 @@ const ProjectItem: React.FC<Props> = (props) => {
 
 ProjectItem.defaultProps = {
 	publicGithub: true,
+	goToWebsite: true,
 };
 
 export default ProjectItem;
