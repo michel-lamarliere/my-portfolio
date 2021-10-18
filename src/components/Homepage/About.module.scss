@@ -1,16 +1,29 @@
 @import '../../variables.scss';
 
-.wrapper {
-	width: 80%;
-	margin: 0 auto 0 auto;
-}
-
 .img {
 	width: 100%;
+	object-fit: contain;
 }
 
 .text {
 	font-family: $fontLight;
 	font-size: 16px;
-	color: $colorWhite;
+}
+
+@media screen and (min-width: 1200px) {
+	.wrapper {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.img {
+		float: left;
+		width: 50%;
+	}
+
+	.text {
+		font-size: 16px;
+		float: right;
+		width: 50%;
+	}
 }

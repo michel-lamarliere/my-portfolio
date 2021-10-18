@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Filter.module.scss';
+import Border from './Filter.module.scss';
 
 import FilterItem from './FilterItem';
 
@@ -15,82 +15,82 @@ import { useSelector } from 'react-redux';
 
 interface Props {
 	allHandler: any;
-	allClasses: string;
+	allBorder: string;
 	reactHandler: any;
-	reactClasses: string;
+	reactBorder: string;
 	reduxHandler: any;
-	reduxClasses: string;
+	reduxBorder: string;
 	typescriptHandler: any;
-	typescriptClasses: string;
+	typescriptBorder: string;
 	wordpressHandler: any;
-	wordpressClasses: string;
+	wordpressBorder: string;
 	googleCloudHandler: any;
-	googleCloudClasses: string;
+	googleCloudBorder: string;
 	firebaseHandler: any;
-	firebaseClasses: string;
+	firebaseBorder: string;
 	apiHandler: any;
-	apiClasses: string;
+	apiBorder: string;
 }
 
 const Filter: React.FC<Props> = (props) => {
 	const french = useSelector((state: RootState) => state.language.french);
 
 	return (
-		<div className={classes.wrapper}>
+		<div className={Border.wrapper}>
 			<FilterItem
 				text={french ? 'Tout' : 'All'}
 				logo={false}
 				onClick={props.allHandler}
-				className={props.allClasses}
+				border={props.allBorder}
 			/>
 			<FilterItem
 				text='React'
 				alt='React'
 				src={reactIcon}
 				onClick={props.reactHandler}
-				className={props.reactClasses}
+				border={props.reactBorder}
 			/>
 			<FilterItem
 				text='Redux'
 				alt='Redux'
 				src={reduxIcon}
 				onClick={props.reduxHandler}
-				className={props.reduxClasses}
+				border={props.reduxBorder}
 			/>
 			<FilterItem
 				text='TypeScript'
 				alt='TypeScript'
 				src={typescriptIcon}
 				onClick={props.typescriptHandler}
-				className={props.typescriptClasses}
+				border={props.typescriptBorder}
 			/>
 			<FilterItem
 				text='Wordpress'
 				alt='Wordpress'
 				src={wordpressIcon}
 				onClick={props.wordpressHandler}
-				className={props.wordpressClasses}
+				border={props.wordpressBorder}
 			/>
 			<FilterItem
 				text='Google Cloud'
 				alt='Google Cloud'
 				src={googleCloudIcon}
 				onClick={props.googleCloudHandler}
-				className={props.googleCloudClasses}
+				border={props.googleCloudBorder}
 			/>
 			<FilterItem
 				text='Firebase'
 				alt='Firebase'
 				src={firebaseIcon}
 				onClick={props.firebaseHandler}
-				className={props.firebaseClasses}
+				border={props.firebaseBorder}
 			/>
 			<FilterItem
 				text='API'
 				alt='API'
 				src={apiIcon}
 				onClick={props.apiHandler}
-				className={props.apiClasses}
+				border={props.apiBorder}
 			/>
 		</div>
 	);

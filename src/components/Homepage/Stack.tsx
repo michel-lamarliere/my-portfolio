@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Stack.module.scss';
-import StackItem from './StackItem';
+import StackItem, { ThemedStackItem } from './StackItem';
 
 import htmlIcon from '../../assets/icons/html.svg';
 import cssIcon from '../../assets/icons/css.svg';
@@ -19,13 +19,19 @@ import wordpressIcon from '../../assets/icons/wordpress.svg';
 import TitleLign from '../_UI/TitleLign';
 import { RootState } from '../../store/store';
 import { useSelector } from 'react-redux';
+import { GitHubLogo } from '../_UI/Logos';
 
 const Stack = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
 	return (
 		<div className={classes.wrapper} ref={ref}>
-			<TitleLign text={french ? 'Mes compétences' : 'My Stack'} />
+			<TitleLign
+				className={classes.lign}
+				text={french ? 'Mes compétences' : 'My Stack'}
+			/>
 			<div className={classes.stack}>
 				<StackItem img={htmlIcon} alt='html' text='HTML' />
 				<StackItem img={cssIcon} alt='css' text='CSS' />
@@ -39,7 +45,11 @@ const Stack = React.forwardRef<HTMLDivElement>((props, ref) => {
 				<StackItem img={googleCloudIcon} alt='Google Cloud' text='Google Cl.' />
 				<StackItem img={firebaseIcon} alt='firebase' text='Firebase' />
 				<StackItem img={gitIcon} alt='git' text='git' />
-				<StackItem img={githubIcon} alt='github' text='GitHub' />
+				<ThemedStackItem alt='github' text='GitHub'>
+					<GitHubLogo
+						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+					/>
+				</ThemedStackItem>
 				<StackItem img={wordpressIcon} alt='wordpress' text='Wordpress' />
 			</div>
 		</div>

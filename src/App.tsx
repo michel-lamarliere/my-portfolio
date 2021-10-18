@@ -13,7 +13,17 @@ import { RootState } from './store/store';
 
 const App: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 	const dispatch = useDispatch();
+
+	useEffect(() => {
+		if (dark) {
+			document.body.style.backgroundColor = theme.darkTheme.veryDarkGrey;
+		} else {
+			document.body.style.backgroundColor = theme.lightTheme.veryDarkGrey;
+		}
+	}, [dark]);
 
 	useEffect(() => {
 		let language;

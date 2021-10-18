@@ -18,6 +18,8 @@
 	align-items: center;
 
 	&_logo {
+		display: flex;
+		align-self: center;
 		width: 1.2rem;
 		height: 1.2rem;
 	}
@@ -45,5 +47,14 @@
 		&:hover {
 			color: $colorLightGrey !important;
 		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.links {
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		margin: 0 auto;
 	}
 }

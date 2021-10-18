@@ -1,0 +1,54 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 0rem auto 8rem auto;
+}
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2.5rem;
+	gap: 4rem;
+}
+
+.contact_text {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+	.wrapper {
+		width: 70%;
+	}
+
+	.contact {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		margin-top: 4rem;
+	}
+
+	.contact_text {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.contact {
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	.contact_text {
+		flex-direction: column-reverse;
+		justify-content: flex-end;
+		gap: 2rem;
+	}
+
+	.form {
+		width: 60%;
+	}
+}

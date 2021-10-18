@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import classes from './Projects.module.scss';
+import Border from './Projects.module.scss';
 import Filter from '../components/Projects/Filter';
 
 import { ContactBtn } from '../components/_UI/Buttons';
@@ -11,43 +11,49 @@ const Projects: React.FC = () => {
 	const dispatch = useDispatch();
 	const projects = useProjects('PROJECTS');
 	const filter = useSelector((state: RootState) => state.filter);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
 	const filterHandler = (action: string) => {
 		dispatch({ type: 'RESET' });
 		dispatch({ type: action });
 	};
 
-	const allClasses = filter.all ? classes.active : '';
-	const reactClasses = filter.react ? classes.active : '';
-	const reduxClasses = filter.redux ? classes.active : '';
-	const typescriptClasses = filter.typescript ? classes.active : '';
-	const googleCloudClasses = filter.googleCloud ? classes.active : '';
-	const firebaseClasses = filter.firebase ? classes.active : '';
-	const wordpressClasses = filter.wordpress ? classes.active : '';
-	const apiClasses = filter.api ? classes.active : '';
+	const borderColor = `solid 0.1rem ${
+		dark ? theme.darkTheme.white : theme.lightTheme.white
+	}`;
+
+	const allBorder = filter.all ? borderColor : '';
+	const reactBorder = filter.react ? borderColor : '';
+	const reduxBorder = filter.redux ? borderColor : '';
+	const typescriptBorder = filter.typescript ? borderColor : '';
+	const googleCloudBorder = filter.googleCloud ? borderColor : '';
+	const firebaseBorder = filter.firebase ? borderColor : '';
+	const wordpressBorder = filter.wordpress ? borderColor : '';
+	const apiBorder = filter.api ? borderColor : '';
 
 	return (
 		<>
-			<div className={classes.wrapper}>
+			<div className={Border.wrapper}>
 				<Filter
 					allHandler={() => filterHandler('ALL')}
-					allClasses={allClasses}
+					allBorder={allBorder}
 					reactHandler={() => filterHandler('REACT')}
-					reactClasses={reactClasses}
+					reactBorder={reactBorder}
 					reduxHandler={() => filterHandler('REDUX')}
-					reduxClasses={reduxClasses}
+					reduxBorder={reduxBorder}
 					typescriptHandler={() => filterHandler('TYPESCRIPT')}
-					typescriptClasses={typescriptClasses}
+					typescriptBorder={typescriptBorder}
 					googleCloudHandler={() => filterHandler('GOOGLECLOUD')}
-					googleCloudClasses={googleCloudClasses}
+					googleCloudBorder={googleCloudBorder}
 					firebaseHandler={() => filterHandler('FIREBASE')}
-					firebaseClasses={firebaseClasses}
+					firebaseBorder={firebaseBorder}
 					wordpressHandler={() => filterHandler('WORDPRESS')}
-					wordpressClasses={wordpressClasses}
+					wordpressBorder={wordpressBorder}
 					apiHandler={() => filterHandler('API')}
-					apiClasses={apiClasses}
+					apiBorder={apiBorder}
 				/>
-				<div className={classes.projects}>{projects}</div>
+				<div className={Border.projects}>{projects}</div>
 			</div>
 			<ContactBtn />
 		</>

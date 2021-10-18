@@ -8,14 +8,21 @@ import TitleLign from '../../_UI/TitleLign';
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 import maltIcon from '../../../assets/icons/malt.svg';
 import githubIcon from '../../../assets/icons/github.svg';
+import { GitHubLogo, MaltLogo, LinkedinLogo } from '../../_UI/Logos';
 
-const Socials: React.FC = () => {
+interface Props {
+	className: string;
+}
+
+const Socials: React.FC<Props> = (props) => {
 	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
 	return (
-		<div className={classes.wrapper}>
+		<div className={`${classes.wrapper} ${props.className}`}>
 			<TitleLign
-				className={classes.title_lign}
+				className={classes.lign}
 				text={french ? 'Me suivre' : 'My Socials'}
 			/>
 			<div className={classes.socials}>
@@ -24,21 +31,33 @@ const Socials: React.FC = () => {
 					target='_blank'
 					rel='noreferrer'
 				>
-					<img src={linkedinIcon} alt='' className={classes.socials_logo} />
+					{/* <img src={linkedinIcon} alt='' className={classes.socials_logo} /> */}
+					<LinkedinLogo
+						className={classes.socials_logo}
+						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+					/>
 				</a>
 				<a
 					href='https://www.malt.fr/dashboard/freelancer'
 					target='_blank'
 					rel='noreferrer'
 				>
-					<img src={maltIcon} alt='' className={classes.socials_logo} />
+					{/* <img src={maltIcon} alt='' className={classes.socials_logo} /> */}
+					<MaltLogo
+						className={classes.socials_logo}
+						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+					/>
 				</a>
 				<a
 					href='https://github.com/michel-lamarliere'
 					target='_blank'
 					rel='noreferrer'
 				>
-					<img src={githubIcon} alt='' className={classes.socials_logo} />
+					{/* <img src={githubIcon} alt='' className={classes.socials_logo} /> */}
+					<GitHubLogo
+						className={classes.socials_logo}
+						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+					/>
 				</a>
 			</div>
 		</div>

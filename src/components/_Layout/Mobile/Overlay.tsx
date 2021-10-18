@@ -11,7 +11,7 @@ const Overlay: React.FC = () => {
 	const dispatch = useDispatch();
 	const transition = useTransition(opened, {
 		from: { opacity: 0 },
-		enter: { opacity: 0.25 },
+		enter: { opacity: 0.5 },
 		leave: { opacity: 0 },
 	});
 

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import LogoML from '../_UI/LogoML';
 import classes from './Arrival.module.scss';
-import Stack from './Stack';
 import arrow from '../../assets/icons/arrow.svg';
 
 interface Props {
@@ -12,18 +11,35 @@ interface Props {
 
 const Arrival: React.FC<Props> = (props) => {
 	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
 	return (
 		<>
 			<div className={classes.wrapper}>
-				<LogoML className={classes.logo} />
-				<div className={classes.name}>Michel Lamarlière</div>
-				<div className={classes.title}>
+				<LogoML
+					className={classes.logo}
+					fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+				/>
+				<div
+					className={classes.name}
+					style={{
+						color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+					}}
+				>
+					Michel Lamarlière
+				</div>
+				<div
+					className={classes.title}
+					style={{
+						color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+					}}
+				>
 					{french ? 'DÉVELOPPEUR FRONT END' : 'FRONT END DEVELOPER'}
 				</div>
 			</div>
 			<div className={classes.slide} onClick={props.arrowHandler}>
-				<img src={arrow} alt='' />
+				<img src={arrow} alt={french ? 'Flèche' : 'Arrow'} />
 			</div>
 		</>
 	);

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import classes from './FilterItem.module.scss';
+
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
 
 interface FilterItemProps {
 	onClick: () => {};
-	className: string;
+	border: string;
 	logo?: boolean;
 	src?: string;
 	alt?: string;
@@ -11,10 +14,29 @@ interface FilterItemProps {
 }
 
 const FilterItem: React.FC<FilterItemProps> = (props) => {
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
+
 	return (
-		<button className={`${classes.wrapper} ${props.className}`} onClick={props.onClick}>
-			{props.logo ? <img className={classes.img} src={props.src} alt={props.alt} /> : ''}
-			<div className={classes.text}>{props.text}</div>
+		<button
+			className={classes.wrapper}
+			style={{
+				backgroundColor: dark ? theme.darkTheme.grey : theme.lightTheme.grey,
+				border: props.border,
+			}}
+			onClick={props.onClick}
+		>
+			{props.logo ? (
+				<img className={classes.img} src={props.src} alt={props.alt} />
+			) : (
+				''
+			)}
+			<div
+				className={classes.text}
+				style={{ color: dark ? theme.darkTheme.white : theme.lightTheme.white }}
+			>
+				{props.text}
+			</div>
 		</button>
 	);
 };

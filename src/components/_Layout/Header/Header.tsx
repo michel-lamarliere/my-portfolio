@@ -1,16 +1,78 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
 import classes from './Header.module.scss';
+import enLogo from '../../../assets/icons/english.svg';
+import frLogo from '../../../assets/icons/francais.svg';
+import lightThemeLogo from '../../../assets/icons/theme_light.svg';
+import darkThemeLogo from '../../../assets/icons/theme_dark.svg';
 
 import LogoML from '../../_UI/LogoML';
+import { RootState } from '../../../store/store';
 
 const Header: React.FC = () => {
+	const dispatch = useDispatch();
+	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
+
+	const languageHandler = () => {
+		if (!french) {
+			localStorage.setItem('language', 'french');
+		}
+		if (french) {
+			localStorage.setItem('language', 'english');
+		}
+		dispatch({ type: 'LANGUAGE TOGGLE' });
+	};
+
+	const themeHandler = () => {
+		dispatch({ type: 'THEME TOGGLE' });
+	};
+
+	const linkColor = dark ? theme.darkTheme.white : theme.lightTheme.white;
+
 	return (
 		<div className={classes.wrapper}>
 			<div className={classes.header}>
-				<Link to='/'>
-					<LogoML className={classes.logo} />
-				</Link>
+				<div className={classes.links}>
+					<Link to='/'>
+						<LogoML
+							className={classes.logo}
+							fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+						/>
+					</Link>
+					<NavLink
+						to='/home'
+						className={classes.links_link}
+						style={{ color: linkColor }}
+						activeClassName={classes.links_link_active}
+					>
+						{french ? 'Accueil' : 'Home'}
+					</NavLink>
+					<NavLink
+						to='/projects'
+						className={classes.links_link}
+						style={{ color: linkColor }}
+						activeClassName={classes.links_link_active}
+					>
+						{french ? 'Projets' : 'Projects'}
+					</NavLink>
+				</div>
+				<div className={classes.links}>
+					<div className={classes.language} onClick={languageHandler}>
+						<img
+							src={french ? enLogo : frLogo}
+							alt={french ? 'English' : 'Français'}
+						/>
+					</div>
+					<div className={classes.theme} onClick={themeHandler}>
+						<img
+							src={dark ? lightThemeLogo : darkThemeLogo}
+							alt={french ? 'Bouton Thème' : 'Theme Button'}
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

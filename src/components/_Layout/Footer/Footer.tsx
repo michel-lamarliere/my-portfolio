@@ -41,13 +41,13 @@ const Footer: React.FC = () => {
 			</div>
 			<div className={classes.shoutout}>
 				{french ? 'Par' : 'By'}
-				<span className={classes.shoutout_link}>&nbsp;Michel Lamarlière</span>
+				<span className={classes.shoutout_text}>&nbsp;Michel Lamarlière</span>
 			</div>
 			<div className={classes.shoutout}>
 				<div>
 					{french ? 'Logo et Web Design par' : 'Logo et Web Design by'}
 					<a
-						href='http://www.enolalouge.com'
+						href='https://www.enolalouge.com'
 						target='_blank'
 						rel='noreferrer'
 						className={classes.shoutout_link}

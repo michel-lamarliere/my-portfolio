@@ -1,9 +1,4 @@
-.wrapper {
-	width: 80%;
-	margin: 0 auto;
-}
-
-.title_lign {
+.lign {
 	margin-top: 0rem !important;
 }
 
@@ -14,5 +9,12 @@
 	&_logo {
 		width: 2.5rem;
 		height: 2.5rem;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.socials {
+		justify-content: flex-start;
+		gap: 2rem;
 	}
 }

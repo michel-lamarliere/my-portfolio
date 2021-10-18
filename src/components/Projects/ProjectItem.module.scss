@@ -3,9 +3,9 @@
 .wrapper {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	min-height: 14.45rem;
 	margin: 0 auto;
+	min-width: 12.5rem;
+	max-width: 19.5rem;
 	background-color: $colorDarkGrey;
 	border-radius: 0.5rem;
 	transition: all ease-in-out 0.3s;
@@ -13,8 +13,8 @@
 
 .main_img {
 	border-radius: 0.5rem 0.5rem 0 0;
-	height: 9.5rem;
-	object-fit: cover;
+	width: 100%;
+	object-fit: contain;
 }
 
 .bottom {
@@ -28,7 +28,6 @@
 .title {
 	font-family: $fontSemiBold;
 	font-size: 18px;
-	color: $colorWhite;
 }
 
 .description {
@@ -73,4 +72,12 @@
 	width: 1.2rem;
 	height: 1.2rem;
 	border-radius: 0;
+}
+
+@media screen and (min-width: 1200px) {
+	.wrapper {
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
 }

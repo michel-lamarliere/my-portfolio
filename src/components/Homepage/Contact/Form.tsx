@@ -3,7 +3,11 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
 import classes from './Form.module.scss';
 
-const Form: React.FC = () => {
+interface Props {
+	className: string;
+}
+
+const Form: React.FC<Props> = (props) => {
 	const french = useSelector((state: RootState) => state.language.french);
 
 	const [sent, setSent] = useState(false);
@@ -140,7 +144,7 @@ const Form: React.FC = () => {
 	const allValid = name.isValid && email.isValid && message.isValid;
 
 	return (
-		<div className={classes.wrapper}>
+		<div className={props.className}>
 			<form
 				className={classes.form}
 				action='https://formsubmit.co/contact@michel-lamarliere.com'

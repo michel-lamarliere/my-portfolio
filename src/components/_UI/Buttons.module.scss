@@ -1,10 +1,16 @@
 @import '../../variables.scss';
 
 .wrapper {
-	margin: 4rem auto;
+	margin: 2.5rem auto;
 	padding: 0.625em 0.8em;
 	border: solid 0.1rem $colorOrange;
 	border-radius: 0.25rem;
 	font-size: 16px;
-	color: $colorWhite;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 768) {
+	.wrapper {
+		margin: 4rem;
+	}
 }

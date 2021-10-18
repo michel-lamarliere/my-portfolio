@@ -4,6 +4,9 @@ import classes from './ProjectItem.module.scss';
 import githubIcon from '../../assets/icons/github.svg';
 import openTabIcon from '../../assets/icons/open-tab.svg';
 
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+
 interface Props {
 	title: string;
 	img: string;
@@ -16,12 +19,36 @@ interface Props {
 }
 
 const ProjectItem: React.FC<Props> = (props) => {
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
+
 	return (
-		<div className={classes.wrapper}>
+		<div
+			className={classes.wrapper}
+			style={{
+				backgroundColor: dark
+					? theme.darkTheme.darkGrey
+					: theme.lightTheme.darkGrey,
+			}}
+		>
 			<img className={classes.main_img} src={props.img} alt={props.title} />
 			<div className={classes.bottom}>
-				<div className={classes.title}>{props.title}</div>
-				<div className={classes.description}>{props.description}</div>
+				<div
+					className={classes.title}
+					style={{
+						color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+					}}
+				>
+					{props.title}
+				</div>
+				<div
+					className={classes.description}
+					style={{
+						color: dark ? '' : theme.lightTheme.black,
+					}}
+				>
+					{props.description}
+				</div>
 				<div className={classes.stack}>
 					{props.stack.map((item) => (
 						<img className={classes.stack_item} src={item} alt='logo' />

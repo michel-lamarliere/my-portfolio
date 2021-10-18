@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
@@ -9,11 +9,14 @@ import './MobileMenu.module.scss';
 
 import enLogo from '../../../assets/icons/english.svg';
 import frLogo from '../../../assets/icons/francais.svg';
+import lightThemeLogo from '../../../assets/icons/theme_light.svg';
+import darkThemeLogo from '../../../assets/icons/theme_dark.svg';
 
 const MobileMenu: React.FC = () => {
 	const dispatch = useDispatch();
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
 	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
 	const location = useLocation().pathname;
 	const transition = useTransition(opened, {
 		from: { y: 150, x: 150, opacity: 0 },
@@ -82,7 +85,10 @@ const MobileMenu: React.FC = () => {
 								/>
 							</div>
 							<div className={classes.theme} onClick={themeHandler}>
-								<img src={''} alt='T' />
+								<img
+									src={dark ? lightThemeLogo : darkThemeLogo}
+									alt={french ? 'Bouton Thème' : 'Theme Button'}
+								/>
 							</div>
 						</animated.div>
 					)

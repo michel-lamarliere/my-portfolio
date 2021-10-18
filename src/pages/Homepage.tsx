@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import About from '../components/Homepage/About';
 import Arrival from '../components/Homepage/Arrival';
 import HomeProjects from '../components/Homepage/HomeProjects';
@@ -21,18 +21,20 @@ const Homepage: React.FC = () => {
 	};
 
 	return (
-		<>
+		<div className={classes.wrapper}>
 			<Arrival arrowHandler={arrowHandler} />
 			<Stack ref={stack} />
 			<About />
 			<HomeProjects />
 			<SeeMore />
-			<div>
-				<Socials />
-				<ContactDetails />
-				<Form />
+			<div className={classes.contact}>
+				<div className={classes.contact_text}>
+					<Socials className={classes.socials} />
+					<ContactDetails className={classes.details} />
+				</div>
+				<Form className={classes.form} />
 			</div>
-		</>
+		</div>
 	);
 };
 

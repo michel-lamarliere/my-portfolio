@@ -9,13 +9,9 @@
 	min-width: 4.5rem;
 	height: 2.7rem;
 	background-color: $colorGrey;
-	border: solid 0.1rem $colorGrey;
+	border: solid 0.1rem none;
 	border-radius: 5%;
 	cursor: pointer;
-}
-
-.active {
-	border: solid 0.1rem $colorWhite;
 }
 
 .img {

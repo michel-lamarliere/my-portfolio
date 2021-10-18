@@ -1,10 +1,56 @@
 .wrapper {
-	width: 80%;
-	margin: auto;
+	position: relative;
+	display: flex;
 }
 
 .projects {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
+	overflow: hidden;
 	gap: 2rem;
+}
+
+.left {
+	display: none;
+}
+
+.right {
+	display: none;
+}
+
+@media screen and (min-width: 500px) {
+	.projects {
+		flex-direction: row;
+	}
+
+	.left {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: -1.5rem;
+	}
+
+	.right {
+		display: flex;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: -1.5rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.left {
+		display: none;
+	}
+
+	.right {
+		display: none;
+	}
+
+	.projects {
+		width: 100%;
+		overflow: visible;
+	}
 }
