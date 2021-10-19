@@ -64,3 +64,59 @@ export const LinkedinLogo: React.FC<LogoObj> = (props) => {
 		</svg>
 	);
 };
+
+export const NewTabLogo: React.FC<LogoObj> = (props) => {
+	return (
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			width='24'
+			height='24'
+			viewBox='0 0 24 24'
+			className={props.className}
+		>
+			<path
+				d='M20.571,20.571H3.429V3.429H12V0H0V24H24V12H20.571Z'
+				fill={props.fill}
+			/>
+			<path
+				d='M234.785,0V3.429H237.5l-7.359,7.359,2.424,2.424,7.359-7.359V8.571h3.429V0Z'
+				transform='translate(-219.356)'
+				fill={props.fill}
+			/>
+		</svg>
+	);
+};
+
+export const LeftArrowLogo: React.FC<LogoObj> = (props) => {
+	return (
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 254.71 384.3'
+			className={props.className}
+		>
+			<path
+				id='Tracé_1'
+				data-name='Tracé 1'
+				d='M192.05,0l62.22,62.22L233.79,82.65l-9.54,9.65-99.71,99.75,99.71,99.71,9.29,9,21.17,21.28L192.45,384.3,8.69,200.54l-.18.18L.09,192.21l.15-.15L0,191.79l14.1-14.13L51,140.83,67,125l.39-.36,5.89-5.83,31.15-31.12h-.12Z'
+				fill={props.fill}
+			/>
+		</svg>
+	);
+};
+
+export const RightArrowLogo: React.FC<LogoObj> = (props) => {
+	return (
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 254.71 384.3'
+			className={props.className}
+		>
+			<path
+				id='Tracé_1'
+				data-name='Tracé 1'
+				d='M62.66,0,.44,62.22,20.92,82.65l9.54,9.65,99.71,99.75L30.46,291.76l-9.3,9L0,322.08,62.25,384.3,246,200.54l.18.18,8.42-8.51-.15-.15.24-.27-14.1-14.13-36.86-36.83-16-15.83-.39-.36-5.89-5.83L150.28,87.69h.12Z'
+				fill={props.fill}
+			/>
+		</svg>
+	);
+};

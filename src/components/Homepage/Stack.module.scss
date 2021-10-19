@@ -23,6 +23,9 @@
 		row-gap: 2rem;
 		grid-template-columns: repeat(auto-fit, 4.5rem);
 	}
+	.lign {
+		margin-top: 5rem !important;
+	}
 }
 
 @media screen and (min-width: 1000px) {

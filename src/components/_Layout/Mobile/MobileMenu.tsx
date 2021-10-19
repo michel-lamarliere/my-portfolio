@@ -17,6 +17,7 @@ const MobileMenu: React.FC = () => {
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
 	const french = useSelector((state: RootState) => state.language.french);
 	const dark = useSelector((state: RootState) => state.theme.dark);
+
 	const location = useLocation().pathname;
 	const transition = useTransition(opened, {
 		from: { y: 150, x: 150, opacity: 0 },
@@ -56,6 +57,12 @@ const MobileMenu: React.FC = () => {
 	};
 
 	const themeHandler = () => {
+		if (!dark) {
+			localStorage.setItem('theme', 'dark');
+		}
+		if (dark) {
+			localStorage.setItem('theme', 'light');
+		}
 		dispatch({ type: 'THEME TOGGLE' });
 	};
 

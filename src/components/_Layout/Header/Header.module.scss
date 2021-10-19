@@ -2,10 +2,6 @@
 
 .wrapper {
 	display: none;
-	width: 100%;
-	height: 4rem;
-	box-shadow: #00000029 0rem 2rem 2rem;
-	z-index: 3;
 }
 
 .open {
@@ -56,7 +52,16 @@
 
 @media screen and (min-width: 768px) {
 	.wrapper {
+		position: fixed;
 		display: flex;
+		width: 100%;
+		height: 4rem;
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+		z-index: 4;
+
+		&_small {
+			height: 3rem;
+		}
 	}
 
 	.header {

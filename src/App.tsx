@@ -27,15 +27,24 @@ const App: React.FC = () => {
 
 	useEffect(() => {
 		let language;
+		let localTheme;
 		if (localStorage) {
 			language = localStorage.getItem('language');
+			localTheme = localStorage.getItem('theme');
 		}
+		// LANGUAGE
 		if (language === 'french' && !french) {
 			dispatch({ type: 'LANGUAGE TOGGLE' });
 		}
-
 		if (language === 'english' && french) {
 			dispatch({ type: 'LANGUAGE TOGGLE' });
+		}
+		// THEME
+		if (localTheme === 'light' && dark) {
+			dispatch({ type: 'THEME TOGGLE' });
+		}
+		if (localTheme === 'dark' && !dark) {
+			dispatch({ type: 'THEME TOGGLE' });
 		}
 	}, []);
 

@@ -12,10 +12,18 @@
 
 .left {
 	display: none;
+
+	&_arrow {
+		display: none;
+	}
 }
 
 .right {
 	display: none;
+
+	&_arrow {
+		@extend .left_arrow;
+	}
 }
 
 @media screen and (min-width: 500px) {
@@ -29,6 +37,12 @@
 		top: 50%;
 		transform: translateY(-50%);
 		left: -1.5rem;
+
+		&_arrow {
+			display: inline;
+			width: 1rem;
+			height: 1rem;
+		}
 	}
 
 	.right {
@@ -37,6 +51,10 @@
 		top: 50%;
 		transform: translateY(-50%);
 		right: -1.5rem;
+
+		// &_arrow {
+		// 	@extend .left_arrow;
+		// }
 	}
 }
 

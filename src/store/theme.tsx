@@ -8,10 +8,10 @@ const initialStateReducer = {
 		veryDarkGrey: '#1d1e27',
 	},
 	lightTheme: {
-		white: '#000000',
+		white: '#2d3246',
 		black: '#ffffff',
 		grey: '#f3f3f9',
-		darkGrey: '#808dc3',
+		darkGrey: '#f3f3f9',
 		veryDarkGrey: '#ffffff',
 	},
 };

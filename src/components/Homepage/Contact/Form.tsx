@@ -9,6 +9,8 @@ interface Props {
 
 const Form: React.FC<Props> = (props) => {
 	const french = useSelector((state: RootState) => state.language.french);
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
 	const [sent, setSent] = useState(false);
 	const [name, setName] = useState({
@@ -143,6 +145,10 @@ const Form: React.FC<Props> = (props) => {
 
 	const allValid = name.isValid && email.isValid && message.isValid;
 
+	// const inputBackgroundColor = dark ? theme.darkTheme.grey : theme.lightTheme.grey;
+	const inputBackgroundColor = dark ? theme.darkTheme.grey : theme.lightTheme.grey;
+	const inputTextColor = dark ? theme.darkTheme.white : theme.lightTheme.white;
+
 	return (
 		<div className={props.className}>
 			<form
@@ -154,6 +160,10 @@ const Form: React.FC<Props> = (props) => {
 				<input type='hidden' name='_captcha' value='false' />
 				<input
 					className={nameInputClasses}
+					style={{
+						backgroundColor: inputBackgroundColor,
+						color: inputTextColor,
+					}}
 					type='text'
 					name='name'
 					placeholder={french ? 'Nom' : 'Name'}
@@ -162,7 +172,12 @@ const Form: React.FC<Props> = (props) => {
 					onBlur={(event) => nameBlurHandler(event)}
 				/>
 				{!name.isValid && name.isTouched && (
-					<div className={classes.invalid_text}>
+					<div
+						className={classes.invalid_text}
+						style={{
+							color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+						}}
+					>
 						{french
 							? 'Veuillez entrer un nom valide.'
 							: 'Please enter a valid name.'}
@@ -170,6 +185,10 @@ const Form: React.FC<Props> = (props) => {
 				)}
 				<input
 					className={emailInputClasses}
+					style={{
+						backgroundColor: inputBackgroundColor,
+						color: inputTextColor,
+					}}
 					type='text'
 					name='email'
 					placeholder='E-mail'
@@ -178,7 +197,12 @@ const Form: React.FC<Props> = (props) => {
 					onBlur={(event) => emailBlurHandler(event)}
 				/>
 				{!email.isValid && email.isTouched && (
-					<div className={classes.invalid_text}>
+					<div
+						className={classes.invalid_text}
+						style={{
+							color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+						}}
+					>
 						{french
 							? 'Veuillez entrer une adresse email valide.'
 							: 'Please enter a valid email address.'}
@@ -186,6 +210,10 @@ const Form: React.FC<Props> = (props) => {
 				)}
 				<textarea
 					className={messageInputClasses}
+					style={{
+						backgroundColor: inputBackgroundColor,
+						color: inputTextColor,
+					}}
 					rows={10}
 					name='message'
 					placeholder='Message'
@@ -194,7 +222,12 @@ const Form: React.FC<Props> = (props) => {
 					onBlur={(event) => messageBlurHandler(event)}
 				/>
 				{!message.isValid && message.isTouched && (
-					<div className={classes.invalid_text}>
+					<div
+						className={classes.invalid_text}
+						style={{
+							color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+						}}
+					>
 						{french
 							? 'Veuillez entrer au moins 10 caractères.'
 							: 'Please enter at least 10 characters.'}

@@ -14,7 +14,6 @@ import webpackIcon from '../../assets/icons/webpack.svg';
 import firebaseIcon from '../../assets/icons/firebase.svg';
 import googleCloudIcon from '../../assets/icons/googlecloud.svg';
 import gitIcon from '../../assets/icons/git.svg';
-import githubIcon from '../../assets/icons/github.svg';
 import wordpressIcon from '../../assets/icons/wordpress.svg';
 import TitleLign from '../_UI/TitleLign';
 import { RootState } from '../../store/store';

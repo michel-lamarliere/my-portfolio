@@ -6,6 +6,7 @@ import openTabIcon from '../../assets/icons/open-tab.svg';
 
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { GitHubLogo, NewTabLogo } from '../_UI/Logos';
 
 interface Props {
 	title: string;
@@ -41,14 +42,7 @@ const ProjectItem: React.FC<Props> = (props) => {
 				>
 					{props.title}
 				</div>
-				<div
-					className={classes.description}
-					style={{
-						color: dark ? '' : theme.lightTheme.black,
-					}}
-				>
-					{props.description}
-				</div>
+				<div className={classes.description}>{props.description}</div>
 				<div className={classes.stack}>
 					{props.stack.map((item) => (
 						<img className={classes.stack_item} src={item} alt='logo' />
@@ -57,14 +51,22 @@ const ProjectItem: React.FC<Props> = (props) => {
 				<div className={classes.links}>
 					{props.publicGithub ? (
 						<a href={props.githubLink} target='_blank' rel='noreferrer'>
-							<img src={githubIcon} alt='github link' />
+							<GitHubLogo
+								fill={
+									dark ? theme.darkTheme.white : theme.lightTheme.white
+								}
+							/>
 						</a>
 					) : (
 						<div className={classes.empty}></div>
 					)}
 					{props.goToWebsite ? (
 						<a href={props.websiteLink} target='_blank' rel='noreferrer'>
-							<img src={openTabIcon} alt='new tab link' />
+							<NewTabLogo
+								fill={
+									dark ? theme.darkTheme.white : theme.lightTheme.white
+								}
+							/>
 						</a>
 					) : (
 						<div className={classes.empty}></div>

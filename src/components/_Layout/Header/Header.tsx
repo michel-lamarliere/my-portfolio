@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import classes from './Header.module.scss';
@@ -27,13 +27,26 @@ const Header: React.FC = () => {
 	};
 
 	const themeHandler = () => {
+		if (!dark) {
+			localStorage.setItem('theme', 'dark');
+		}
+		if (dark) {
+			localStorage.setItem('theme', 'light');
+		}
 		dispatch({ type: 'THEME TOGGLE' });
 	};
 
 	const linkColor = dark ? theme.darkTheme.white : theme.lightTheme.white;
 
 	return (
-		<div className={classes.wrapper}>
+		<div
+			className={classes.wrapper}
+			style={{
+				backgroundColor: dark
+					? theme.darkTheme.veryDarkGrey
+					: theme.lightTheme.veryDarkGrey,
+			}}
+		>
 			<div className={classes.header}>
 				<div className={classes.links}>
 					<Link to='/'>

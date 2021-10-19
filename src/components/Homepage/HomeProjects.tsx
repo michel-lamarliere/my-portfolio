@@ -5,11 +5,14 @@ import classes from './HomeProjects.module.scss';
 
 import TitleLign from '../_UI/TitleLign';
 import { useProjects } from '../../hooks/use-projects';
+import { LeftArrowLogo, RightArrowLogo } from '../_UI/Logos';
 
 const HomeProjects: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
-	const projects = useProjects('HOMEPAGE');
+	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
+	const projects = useProjects('HOMEPAGE');
 	const projectRef = useRef<null | HTMLDivElement>(null);
 
 	const leftBtnHandler = () => {
@@ -37,13 +40,19 @@ const HomeProjects: React.FC = () => {
 			<TitleLign text={french ? 'Quelques Projets' : 'Some Projects'} />
 			<div className={classes.wrapper}>
 				<div className={classes.left} onClick={() => leftBtnHandler()}>
-					L
+					<LeftArrowLogo
+						className={classes.left_arrow}
+						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+					/>
 				</div>
 				<div className={classes.projects} ref={projectRef}>
 					{projects}
 				</div>
 				<div className={classes.right} onClick={() => rightBtnHandler()}>
-					R
+					<RightArrowLogo
+						className={classes.right_arrow}
+						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+					/>
 				</div>
 			</div>
 		</>

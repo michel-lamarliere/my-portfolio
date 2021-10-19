@@ -15,7 +15,11 @@ const Presentation: React.FC = () => {
 		<>
 			<TitleLign text={french ? 'Qui suis-je?' : 'About Me'} />
 			<div className={classes.wrapper}>
-				<img src={imgPlaceholder} alt='my photo' className={classes.img} />
+				<img
+					src={imgPlaceholder}
+					alt={french ? 'Moi' : 'Me'}
+					className={classes.img}
+				/>
 				<div
 					className={classes.text}
 					style={{
