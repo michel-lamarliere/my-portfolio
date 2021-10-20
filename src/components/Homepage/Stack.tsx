@@ -47,6 +47,7 @@ const Stack = React.forwardRef<HTMLDivElement>((props, ref) => {
 				<ThemedStackItem alt='github' text='GitHub'>
 					<GitHubLogo
 						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
+						className={classes.svg}
 					/>
 				</ThemedStackItem>
 				<StackItem img={wordpressIcon} alt='wordpress' text='Wordpress' />

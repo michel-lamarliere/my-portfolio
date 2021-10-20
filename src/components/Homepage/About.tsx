@@ -4,7 +4,7 @@ import { RootState } from '../../store/store';
 import classes from './About.module.scss';
 
 import TitleLign from '../_UI/TitleLign';
-import imgPlaceholder from '../../assets/img/cegaImg.png';
+import imgPlaceholder from '../../assets/icons/logo_ml.svg';
 
 const Presentation: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
@@ -27,27 +27,16 @@ const Presentation: React.FC = () => {
 					}}
 				>
 					<p>
-						Après avoir décroché ma licence en langues étrangères, j’ai décidé
-						de me réorienter et me lancer dans le développement en tant
-						qu’autodidacte.
+						{french
+							? "Après avoir décroché ma licence en langues étrangères, j'ai décidé de me réorienter et me lancer dans le développement en tant qu’autodidacte."
+							: 'After graduating with a Bachelor’s degree in foreign languages applied to international business (LEA), I’ve decided to change paths and to go all-in on web development.'}
 					</p>
 					<p>
-						Ma philosophie est d’intégrer une nouvelle technologie à chaque
-						nouveau projet afin d’étoffer mes connaissances.
+						{french
+							? 'Ma philosophie est d’intégrer une nouvelle technologie à chaque nouveau projet afin d’étoffer mes connaissances.'
+							: 'My way of learning is the create projects and to implement something new each time. '}
 					</p>
-					<p>
-						J’ai aujourd’hui les compétences nécessaires pour:
-						<br /> - intégrer une maquette - créer un site web responsive
-						<br /> - utiliser le Context API ou Redux avec React afin de gérer
-						le state d’une application
-						<br /> - utiliser une API afin de rendre le contenu dynamique
-					</p>
-					<p>
-						Après avoir développé de nombreux projets pour développer mes
-						connaissances et quelques clients, je souhaite intégrer une équipe
-						et/ou développer un projet conséquent dans le but d’acquérir
-						encore de nouvelles connaissaces.
-					</p>
+					<p>{french ? '' : ''}</p>
 				</div>
 			</div>
 		</>

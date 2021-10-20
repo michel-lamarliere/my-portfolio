@@ -1,9 +1,6 @@
 import React from 'react';
 import classes from './ProjectItem.module.scss';
 
-import githubIcon from '../../assets/icons/github.svg';
-import openTabIcon from '../../assets/icons/open-tab.svg';
-
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { GitHubLogo, NewTabLogo } from '../_UI/Logos';
