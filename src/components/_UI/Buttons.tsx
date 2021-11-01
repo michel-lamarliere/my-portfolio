@@ -11,7 +11,7 @@ export const ContactBtn: React.FC = () => {
 	const theme = useSelector((state: RootState) => state.theme);
 
 	const goToForm = () => {
-		history.push('/');
+		history.push('/home/#form');
 	};
 
 	return (

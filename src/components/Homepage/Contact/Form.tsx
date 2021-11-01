@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
 import classes from './Form.module.scss';
@@ -8,6 +9,19 @@ interface Props {
 }
 
 const Form: React.FC<Props> = (props) => {
+	const location = useLocation();
+
+	useEffect(() => {
+		if (location.hash) {
+			let element = document.getElementById(location.hash.slice(1));
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth' });
+			}
+		} else {
+			window.scrollTo(0, 0);
+		}
+	}, [location]);
+
 	const french = useSelector((state: RootState) => state.language.french);
 	const dark = useSelector((state: RootState) => state.theme.dark);
 	const theme = useSelector((state: RootState) => state.theme);
@@ -145,7 +159,6 @@ const Form: React.FC<Props> = (props) => {
 
 	const allValid = name.isValid && email.isValid && message.isValid;
 
-	// const inputBackgroundColor = dark ? theme.darkTheme.grey : theme.lightTheme.grey;
 	const inputBackgroundColor = dark ? theme.darkTheme.grey : theme.lightTheme.grey;
 	const inputTextColor = dark ? theme.darkTheme.white : theme.lightTheme.white;
 
@@ -156,6 +169,7 @@ const Form: React.FC<Props> = (props) => {
 				action='https://formsubmit.co/contact@michel-lamarliere.com'
 				method='POST'
 				target='iframe'
+				id='form'
 			>
 				<input type='hidden' name='_captcha' value='false' />
 				<input

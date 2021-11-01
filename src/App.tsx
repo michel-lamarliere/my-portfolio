@@ -10,6 +10,7 @@ import Projects from './pages/Projects';
 import Error from './pages/Error';
 import ScrollToTop from './ScrollToTop';
 import { RootState } from './store/store';
+import LegalNotice from './pages/LegalNotice';
 
 const App: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
@@ -61,6 +62,9 @@ const App: React.FC = () => {
 				</Route>
 				<Route path='/projects'>
 					<Projects />
+				</Route>
+				<Route path='/legalnotice'>
+					<LegalNotice />
 				</Route>
 				<Route path='*'>
 					<Error />

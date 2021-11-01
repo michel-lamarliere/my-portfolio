@@ -3,7 +3,7 @@
 .wrapper {
 	flex: 1;
 	width: 80%;
-	margin: 4rem auto 0 auto;
+	margin: 0 auto 0 auto;
 }
 
 .projects {
@@ -17,6 +17,10 @@
 }
 
 @media screen and (min-width: 500px) {
+	.wrapper {
+		margin: 4rem auto 0 auto;
+	}
+
 	.projects {
 		grid-template-columns: repeat(auto-fit, 14.5rem);
 	}

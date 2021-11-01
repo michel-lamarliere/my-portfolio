@@ -8,7 +8,6 @@ import Form from '../components/Homepage/Contact/Form';
 import Stack from '../components/Homepage/Stack';
 import { SeeMore } from '../components/_UI/Buttons';
 import classes from './Homepage.module.scss';
-import ScrollToTop from '../ScrollToTop';
 
 const Homepage: React.FC = () => {
 	const stack = useRef<HTMLDivElement>(null);
