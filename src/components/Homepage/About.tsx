@@ -26,17 +26,35 @@ const Presentation: React.FC = () => {
 						color: dark ? theme.darkTheme.white : theme.lightTheme.white,
 					}}
 				>
-					<p>
-						{french
-							? "Après avoir décroché ma licence en langues étrangères, j'ai décidé de me réorienter et me lancer dans le développement en tant qu’autodidacte."
-							: 'After graduating with a Bachelor’s degree in foreign languages applied to international business (LEA), I’ve decided to change paths and to go all-in on web development.'}
-					</p>
-					<p>
-						{french
-							? 'Ma philosophie est d’intégrer une nouvelle technologie à chaque nouveau projet afin d’étoffer mes connaissances.'
-							: 'My way of learning is the create projects and to implement something new each time. '}
-					</p>
-					<p>{french ? '' : ''}</p>
+					{french ? (
+						<>
+							<p>
+								Je m’appelle Michel et je suis Dévelopeur Front-End basé
+								sur Toulouse.
+							</p>
+							<p>
+								Autodidacte, j’apprends et je m’améliore un peu plus
+								chaque jours.
+							</p>
+							<p>
+								Rigoureux, passionné, curieux et efficace dans mon
+								travail, je sais m’adapter afin de créer des sites
+								rapides, responsive et sécurisés.
+							</p>
+							<p>
+								Je peux intervenir dans des projets de type : ⁃ site
+								vitrine, intégration responsive, refonte de site web ⁃
+								Application full web, Dashboard ⁃ Blog, portfolio,
+								e-commerce Et bien plus encore…
+							</p>
+							<p>
+								N’hésitez pas à me contacter, je vous répondrai rapidement
+								!
+							</p>
+						</>
+					) : (
+						''
+					)}
 				</div>
 			</div>
 		</>

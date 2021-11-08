@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 
-import CegaImg from '../assets/img/cegaImg.png';
-import EnolaImg from '../assets/img/enolaImg.png';
+import CegaImg from '../assets/img/dark_cega.png';
+import EnolaImg from '../assets/img/dark_enola.png';
+import WeatherImg from '../assets/img/dark_meteo.png';
+import MichelImg from '../assets/img/dark_michel.png';
+import OganiruImg from '../assets/img/dark_oganiru.png';
 
 import reactIcon from '../assets/icons/react.svg';
 import reduxIcon from '../assets/icons/redux.svg';
@@ -37,6 +40,7 @@ export const useProjects = (fn: string) => {
 			website: 'https://cega-audit.com',
 			github: 'https://github.com/michel-lamarliere/cega',
 			firstPage: true,
+			goToWebsite: false,
 		},
 		{
 			id: '02',
@@ -54,7 +58,7 @@ export const useProjects = (fn: string) => {
 			id: '03',
 			name: 'Oganiru Law',
 			description: pro,
-			img: CegaImg,
+			img: OganiruImg,
 			technos: ['wordpress'],
 			technosIcons: [wordpressIcon],
 			website: 'https://oganirulaw.com',
@@ -65,7 +69,7 @@ export const useProjects = (fn: string) => {
 			id: '04',
 			name: french ? 'Mon Portfolio' : 'My Portfolio',
 			description: perso,
-			img: CegaImg,
+			img: MichelImg,
 			technos: ['react', 'redux', 'typescript'],
 			technosIcons: [reactIcon, reduxIcon, typescriptIcon],
 			website: '',
@@ -77,7 +81,7 @@ export const useProjects = (fn: string) => {
 			id: '05',
 			name: french ? 'Appli Méteo' : 'Weather App',
 			description: perso,
-			img: CegaImg,
+			img: WeatherImg,
 			technos: ['react', 'googleCloud', 'api'],
 			technosIcons: [reactIcon, googleCloudIcon, apiIcon],
 			website: 'https://weather-app-michel-lamarliere.vercel.app/',

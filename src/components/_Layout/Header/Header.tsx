@@ -9,6 +9,7 @@ import darkThemeLogo from '../../../assets/icons/theme_dark.svg';
 
 import LogoML from '../../_UI/LogoML';
 import { RootState } from '../../../store/store';
+import { ThemeLogo } from '../../_UI/Logos';
 
 const Header: React.FC = () => {
 	const dispatch = useDispatch();
@@ -73,16 +74,21 @@ const Header: React.FC = () => {
 					</NavLink>
 				</div>
 				<div className={classes.links}>
-					<div className={classes.language} onClick={languageHandler}>
-						<img
-							src={french ? enLogo : frLogo}
-							alt={french ? 'English' : 'Français'}
-						/>
+					<div
+						className={classes.language}
+						style={{
+							border: `solid 0.125rem ${
+								dark ? theme.darkTheme.white : theme.lightTheme.white
+							}`,
+							color: dark ? theme.darkTheme.white : theme.lightTheme.white,
+						}}
+						onClick={languageHandler}
+					>
+						{french ? 'EN' : 'FR'}
 					</div>
 					<div className={classes.theme} onClick={themeHandler}>
-						<img
-							src={dark ? lightThemeLogo : darkThemeLogo}
-							alt={french ? 'Bouton Thème' : 'Theme Button'}
+						<ThemeLogo
+							fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
 						/>
 					</div>
 				</div>

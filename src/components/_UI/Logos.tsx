@@ -1,5 +1,4 @@
 import React from 'react';
-import classes from './Logos.module.scss';
 
 interface LogoObj {
 	className?: string;
@@ -115,6 +114,22 @@ export const RightArrowLogo: React.FC<LogoObj> = (props) => {
 				id='Tracé_1'
 				data-name='Tracé 1'
 				d='M62.66,0,.44,62.22,20.92,82.65l9.54,9.65,99.71,99.75L30.46,291.76l-9.3,9L0,322.08,62.25,384.3,246,200.54l.18.18,8.42-8.51-.15-.15.24-.27-14.1-14.13-36.86-36.83-16-15.83-.39-.36-5.89-5.83L150.28,87.69h.12Z'
+				fill={props.fill}
+			/>
+		</svg>
+	);
+};
+
+export const ThemeLogo: React.FC<LogoObj> = (props) => {
+	return (
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			viewBox='0 0 277.81 277.81'
+			className={props.className}
+			style={{ objectFit: 'contain' }}
+		>
+			<path
+				d='M138.91,0C62.32,0,0,62.32,0,138.91s62.32,138.9,138.91,138.9,138.9-62.31,138.9-138.9S215.5,0,138.91,0Zm0,244.28V33.53a105.38,105.38,0,0,1,0,210.75Z'
 				fill={props.fill}
 			/>
 		</svg>

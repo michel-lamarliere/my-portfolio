@@ -37,17 +37,21 @@
 }
 
 .language {
+	display: grid;
+	place-items: center;
 	width: 1.4rem;
 	height: 1.4rem;
 	cursor: pointer;
+	font-family: $fontSemiBold;
+	font-size: 14px;
+	border-radius: 50%;
+	box-sizing: border-box;
 }
 
 .theme {
-	@extend .language;
-	display: grid;
-	place-items: center;
-	background-color: $colorWhite;
-	border-radius: 50%;
+	width: 1.4rem;
+	height: 1.4rem;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 768px) {

@@ -4,25 +4,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 import { RootState } from '../../../store/store';
 import LogoML from '../../_UI/LogoML';
+import { ThemeLogo } from '../../_UI/Logos';
 import classes from './MobileMenu.module.scss';
 import './MobileMenu.module.scss';
-
-import enLogo from '../../../assets/icons/english.svg';
-import frLogo from '../../../assets/icons/francais.svg';
-import lightThemeLogo from '../../../assets/icons/theme_light.svg';
-import darkThemeLogo from '../../../assets/icons/theme_dark.svg';
 
 const MobileMenu: React.FC = () => {
 	const dispatch = useDispatch();
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
 	const french = useSelector((state: RootState) => state.language.french);
 	const dark = useSelector((state: RootState) => state.theme.dark);
+	const theme = useSelector((state: RootState) => state.theme);
 
 	const location = useLocation().pathname;
 	const transition = useTransition(opened, {
 		from: { y: 150, x: 150, opacity: 0 },
 		enter: { y: 0, x: 0, opacity: 1 },
 		leave: { y: 150, x: 150, opacity: 0 },
+		delay: 50,
 	});
 
 	let link = '';
@@ -53,6 +51,7 @@ const MobileMenu: React.FC = () => {
 		if (french) {
 			localStorage.setItem('language', 'english');
 		}
+		dispatch({ type: 'OVERLAY TOGGLE' });
 		dispatch({ type: 'LANGUAGE TOGGLE' });
 	};
 
@@ -63,8 +62,11 @@ const MobileMenu: React.FC = () => {
 		if (dark) {
 			localStorage.setItem('theme', 'light');
 		}
+		dispatch({ type: 'OVERLAY TOGGLE' });
 		dispatch({ type: 'THEME TOGGLE' });
 	};
+
+	const wrapperClasses = dark ? classes.wrapper_light : classes.wrapper_dark;
 
 	return (
 		<>
@@ -77,24 +79,32 @@ const MobileMenu: React.FC = () => {
 			{transition(
 				(styles, item) =>
 					item && (
-						<animated.div className={classes.wrapper} style={styles}>
+						<animated.div
+							className={`${classes.wrapper} ${wrapperClasses}`}
+							style={styles}
+						>
 							<Link
 								to={path}
 								className={classes.link}
 								onClick={mobileMenuHandler}
+								style={{
+									color: dark
+										? theme.darkTheme.white
+										: theme.lightTheme.white,
+								}}
 							>
 								{link}
 							</Link>
 							<div className={classes.language} onClick={languageHandler}>
-								<img
-									src={french ? enLogo : frLogo}
-									alt={french ? 'English' : 'Français'}
-								/>
+								<div>{french ? 'EN' : 'FR'}</div>
 							</div>
 							<div className={classes.theme} onClick={themeHandler}>
-								<img
-									src={dark ? lightThemeLogo : darkThemeLogo}
-									alt={french ? 'Bouton Thème' : 'Theme Button'}
+								<ThemeLogo
+									fill={
+										dark
+											? theme.darkTheme.white
+											: theme.lightTheme.white
+									}
 								/>
 							</div>
 						</animated.div>

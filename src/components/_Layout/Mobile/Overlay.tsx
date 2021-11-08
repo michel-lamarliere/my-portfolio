@@ -7,6 +7,7 @@ import MobileMenu from './MobileMenu';
 
 const Overlay: React.FC = () => {
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
+
 	const [scrolled, setScrolled] = useState(false);
 	const dispatch = useDispatch();
 	const transition = useTransition(opened, {
@@ -34,7 +35,6 @@ const Overlay: React.FC = () => {
 						<animated.div
 							className={classes.overlay}
 							onClick={() => dispatch({ type: 'OVERLAY TOGGLE' })}
-							style={styles}
 						>
 							<MobileMenu />
 						</animated.div>

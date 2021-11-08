@@ -7,9 +7,16 @@
 	width: 10rem;
 	height: 10rem;
 	border-radius: 100% 0 0 0;
-	background-color: $colorWhite;
 	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 	z-index: 3;
+}
+
+.wrapper_light {
+	background-color: $colorBlack;
+}
+
+.wrapper_dark {
+	background-color: $colorWhite;
 }
 
 .trigger_button {
@@ -72,7 +79,6 @@
 	width: 2rem;
 	height: 2rem;
 	border-radius: 50%;
-	background-color: $colorWhite;
 	box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
 		rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 	cursor: pointer;
