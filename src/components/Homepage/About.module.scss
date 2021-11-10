@@ -1,30 +1,44 @@
 @import '../../variables.scss';
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
 
 .img {
-	max-height: 10rem;
-	border: 5px solid black;
-	object-fit: contain;
+	display: flex;
+	width: 100%;
+	max-width: 15rem;
 }
 
 .text {
 	font-family: $fontLight;
 	font-size: 16px;
+
+	& > p:nth-child(1) {
+		margin-top: 0;
+	}
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 375px) {
+	.img {
+		width: 100%;
+		margin: 0 auto 1rem auto;
+	}
+}
+
+@media screen and (min-width: 800px) {
 	.wrapper {
-		display: flex;
-		gap: 2rem;
+		display: block;
 	}
 
 	.img {
+		display: block;
+		width: auto;
 		float: left;
-		width: 50%;
+		margin: 0 1rem 0 0;
 	}
 
 	.text {
 		font-size: 16px;
-		float: right;
-		width: 50%;
 	}
 }

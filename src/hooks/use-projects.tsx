@@ -74,7 +74,6 @@ export const useProjects = (fn: string) => {
 			technosIcons: [reactIcon, reduxIcon, typescriptIcon],
 			website: '',
 			github: 'https://github.com/michel-lamarliere/my-portfolio',
-			firstPage: true,
 			goToWebsite: false,
 		},
 		{
@@ -86,6 +85,7 @@ export const useProjects = (fn: string) => {
 			technosIcons: [reactIcon, googleCloudIcon, apiIcon],
 			website: 'https://weather-app-michel-lamarliere.vercel.app/',
 			github: '',
+			firstPage: true,
 			publicGithub: false,
 		},
 	];
