@@ -29,6 +29,7 @@
 @media screen and (min-width: 500px) {
 	.projects {
 		flex-direction: row;
+		justify-content: space-between;
 	}
 
 	.left {
@@ -51,10 +52,6 @@
 		top: 50%;
 		transform: translateY(-50%);
 		right: -1.5rem;
-
-		// &_arrow {
-		// 	@extend .left_arrow;
-		// }
 	}
 }
 

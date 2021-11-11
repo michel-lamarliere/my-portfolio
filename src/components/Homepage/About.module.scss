@@ -8,6 +8,7 @@
 	display: flex;
 	width: 100%;
 	max-width: 15rem;
+	max-height: 15rem;
 }
 
 .text {
@@ -28,14 +29,14 @@
 
 @media screen and (min-width: 800px) {
 	.wrapper {
-		display: block;
+		display: flex;
+		flex-wrap: nowrap;
+		gap: 2rem;
 	}
 
 	.img {
-		display: block;
-		width: auto;
-		float: left;
-		margin: 0 1rem 0 0;
+		width: 100%;
+		height: auto;
 	}
 
 	.text {

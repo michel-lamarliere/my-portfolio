@@ -72,7 +72,7 @@ const Filter: React.FC<Props> = (props) => {
 				border={props.wordpressBorder}
 			/>
 			<FilterItem
-				text='Google Cloud'
+				text='Google Cl.'
 				alt='Google Cloud'
 				src={googleCloudIcon}
 				onClick={props.googleCloudHandler}
