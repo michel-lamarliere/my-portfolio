@@ -17,10 +17,6 @@
 }
 
 @media screen and (min-width: 500px) {
-	.wrapper {
-		margin: 4rem auto 0 auto;
-	}
-
 	.projects {
 		grid-template-columns: repeat(auto-fit, 14.5rem);
 	}

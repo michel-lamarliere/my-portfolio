@@ -49,10 +49,13 @@ const Presentation: React.FC = () => {
 							</p>
 							<p>
 								Je peux intervenir dans des projets qui nécessitent de :
-								<br />
-								<br />- intégrer une maquette
-								<br />- créer un site web responsive (blog, site vitrine)
-								<br />- créer un site web dynamique (API, base de données)
+								<p style={{ marginLeft: '2rem', marginTop: '0' }}>
+									- intégrer une maquette
+									<br />- créer un site web responsive (blog, site
+									vitrine)
+									<br />- créer un site web dynamique (API, base de
+									données)
+								</p>
 							</p>
 							<p>
 								N’hésitez pas à me contacter, je ferai de mon mieux pour
@@ -83,10 +86,12 @@ const Presentation: React.FC = () => {
 							<p>
 								I am able to intervene or build from the ground up
 								projects that require to:
-								<br />
-								<br />- convert mockups into a functioning website
-								<br />- build a responsive website (blog, landing page)
-								<br />- build a dynamic website (APIs, databases)
+								<p style={{ marginLeft: '2rem', marginTop: '0' }}>
+									- convert mockups into a functioning website
+									<br />- build a responsive website (blog, landing
+									page)
+									<br />- build a dynamic website (APIs, databases)
+								</p>
 							</p>
 							<p>
 								If you have any questions, please fell free to use the
