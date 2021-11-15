@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-dom';
 
 import Layout from './components/_Layout/Layout';
 import MobileMenu from './components/_Layout/Mobile/MobileMenu';
@@ -18,6 +18,10 @@ const App: React.FC = () => {
 	const theme = useSelector((state: RootState) => state.theme);
 	const dispatch = useDispatch();
 
+	const history = useHistory();
+	const location = useLocation();
+	const queryParams = new URLSearchParams(location.search);
+
 	useEffect(() => {
 		if (dark) {
 			document.body.style.backgroundColor = theme.darkTheme.veryDarkGrey;
@@ -34,20 +38,27 @@ const App: React.FC = () => {
 			localTheme = localStorage.getItem('theme');
 		}
 		// LANGUAGE
-		if (language === 'french' && !french) {
+		if ((language === 'french' && !french) || queryParams.get('lan') === 'fr') {
 			dispatch({ type: 'LANGUAGE TOGGLE' });
 		}
-		if (language === 'english' && french) {
+		if ((language === 'english' && french) || queryParams.get('lan') === 'en') {
 			dispatch({ type: 'LANGUAGE TOGGLE' });
 		}
 		// THEME
-		if (localTheme === 'light' && dark) {
+		if ((localTheme === 'light' && dark) || queryParams.get('theme') === 'light') {
 			dispatch({ type: 'THEME TOGGLE' });
 		}
-		if (localTheme === 'dark' && !dark) {
+		if ((localTheme === 'dark' && !dark) || queryParams.get('theme') === 'dark') {
 			dispatch({ type: 'THEME TOGGLE' });
 		}
 	}, []);
+
+	useEffect(() => {
+		history.push({
+			pathname: location.pathname,
+			search: `?lan=${french ? 'fr' : 'en'}&theme=${dark ? 'dark' : 'light'}`,
+		});
+	}, [location.pathname, dark, french]);
 
 	return (
 		<Layout>

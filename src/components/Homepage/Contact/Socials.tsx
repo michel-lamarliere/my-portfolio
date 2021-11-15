@@ -5,9 +5,6 @@ import classes from './Socials.module.scss';
 
 import TitleLign from '../../_UI/TitleLign';
 
-import linkedinIcon from '../../../assets/icons/linkedin.svg';
-import maltIcon from '../../../assets/icons/malt.svg';
-import githubIcon from '../../../assets/icons/github.svg';
 import { GitHubLogo, MaltLogo, LinkedinLogo } from '../../_UI/Logos';
 
 interface Props {
@@ -42,7 +39,6 @@ const Socials: React.FC<Props> = (props) => {
 					target='_blank'
 					rel='noreferrer'
 				>
-					{/* <img src={maltIcon} alt='' className={classes.socials_logo} /> */}
 					<MaltLogo
 						className={classes.socials_logo}
 						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
@@ -53,7 +49,6 @@ const Socials: React.FC<Props> = (props) => {
 					target='_blank'
 					rel='noreferrer'
 				>
-					{/* <img src={githubIcon} alt='' className={classes.socials_logo} /> */}
 					<GitHubLogo
 						className={classes.socials_logo}
 						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}

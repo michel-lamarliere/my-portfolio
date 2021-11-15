@@ -96,7 +96,7 @@ const MobileMenu: React.FC = () => {
 								{link}
 							</Link>
 							<div className={classes.language} onClick={languageHandler}>
-								<div>{french ? 'EN' : 'FR'}</div>
+								{french ? 'EN' : 'FR'}
 							</div>
 							<div className={classes.theme} onClick={themeHandler}>
 								<ThemeLogo

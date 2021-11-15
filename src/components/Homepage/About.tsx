@@ -6,7 +6,7 @@ import classes from './About.module.scss';
 import TitleLign from '../_UI/TitleLign';
 import imgPlaceholder from '../../assets/img/ml_temp.jpg';
 
-const Presentation: React.FC = () => {
+const About: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
 	const dark = useSelector((state: RootState) => state.theme.dark);
 	const theme = useSelector((state: RootState) => state.theme);
@@ -49,13 +49,13 @@ const Presentation: React.FC = () => {
 							</p>
 							<p>
 								Je peux intervenir dans des projets qui nécessitent de :
-								<p style={{ marginLeft: '2rem', marginTop: '0' }}>
+								<div style={{ marginLeft: '2rem', marginTop: '0' }}>
 									- intégrer une maquette
 									<br />- créer un site web responsive (blog, site
 									vitrine)
 									<br />- créer un site web dynamique (API, base de
 									données)
-								</p>
+								</div>
 							</p>
 							<p>
 								N’hésitez pas à me contacter, je ferai de mon mieux pour
@@ -105,4 +105,4 @@ const Presentation: React.FC = () => {
 	);
 };
 
-export default Presentation;
+export default About;

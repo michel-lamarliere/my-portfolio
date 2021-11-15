@@ -11,19 +11,17 @@ textarea {
 	padding: 0.5rem 1rem;
 	border: solid 0.1rem $colorGrey;
 	border-radius: 0.2rem;
-	background-color: $colorGrey;
 	font-family: $fontMedium;
 	font-size: 16px;
-	color: $colorWhite;
 	resize: none;
 
 	&::placeholder {
-		color: $colorLightGrey;
+		color: $colorPurple;
 		opacity: 1;
 	}
 
 	&:focus {
-		border: solid 0.1rem $colorLightGrey;
+		border: solid 0.1rem $colorPurple;
 		outline: none;
 	}
 }
@@ -33,19 +31,18 @@ textarea {
 	margin-top: 0.5rem;
 	padding: 0.4em 1.05em;
 	border-radius: 0.2rem;
-	background-color: $colorGrey;
 	font-size: 16px;
-	color: $colorWhite;
 	cursor: pointer;
 
 	&:active {
 		background-color: $colorOrange;
+		color: $colorWhite;
 	}
 
 	&:disabled {
 		background-color: $colorWhite;
-		color: $colorLightGreyT;
-		border: solid 1px $colorLightGreyT;
+		color: $colorLightGrey;
+		border: solid 1px $colorLightGrey;
 		cursor: not-allowed;
 	}
 }

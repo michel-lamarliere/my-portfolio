@@ -20,7 +20,6 @@
 	}
 
 	&_not_found {
-		color: $colorWhite;
 		font-size: 25px;
 	}
 }
@@ -37,9 +36,5 @@
 		&:hover {
 			color: $colorOrange;
 		}
-	}
-
-	& span {
-		color: $colorWhite;
 	}
 }

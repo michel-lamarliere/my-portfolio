@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React from 'react';
 import classes from './FilterItem.module.scss';
 
 import { useSelector } from 'react-redux';

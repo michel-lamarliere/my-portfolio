@@ -1,11 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import classes from './Header.module.scss';
-import enLogo from '../../../assets/icons/english.svg';
-import frLogo from '../../../assets/icons/francais.svg';
-import lightThemeLogo from '../../../assets/icons/theme_light.svg';
-import darkThemeLogo from '../../../assets/icons/theme_dark.svg';
 
 import LogoML from '../../_UI/LogoML';
 import { RootState } from '../../../store/store';
@@ -50,7 +46,7 @@ const Header: React.FC = () => {
 		>
 			<div className={classes.header}>
 				<div className={classes.links}>
-					<Link to='/'>
+					<Link to='/home'>
 						<LogoML
 							className={classes.logo}
 							fill={dark ? theme.darkTheme.white : theme.lightTheme.white}

@@ -16,13 +16,11 @@
 	font-family: $fontBold;
 	font-size: 32px;
 	text-align: center;
-	color: $colorWhite;
 }
 
 .title {
 	font-family: $fontBold;
 	font-size: 15px;
-	color: $colorWhite;
 }
 
 .slide {
@@ -40,10 +38,6 @@
 }
 
 @media screen and (min-width: 768px) {
-	// .wrapper {
-	// 	margin-top: -4rem;
-	// }
-
 	.logo {
 		height: calc(1.85rem + 3vw);
 	}

@@ -35,6 +35,7 @@ const Overlay: React.FC = () => {
 						<animated.div
 							className={classes.overlay}
 							onClick={() => dispatch({ type: 'OVERLAY TOGGLE' })}
+							style={styles}
 						>
 							<MobileMenu />
 						</animated.div>
