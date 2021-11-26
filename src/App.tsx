@@ -19,8 +19,8 @@ const App: React.FC = () => {
 	const dispatch = useDispatch();
 
 	const history = useHistory();
-	console.log(history);
 	const location = useLocation();
+
 	const queryParams = new URLSearchParams(location.search);
 
 	useEffect(() => {
@@ -55,17 +55,13 @@ const App: React.FC = () => {
 	}, []);
 
 	useEffect(() => {
-		setTimeout(
-			() =>
-				history.push({
-					pathname: location.pathname,
-					search: `?lan=${french ? 'fr' : 'en'}&theme=${
-						dark ? 'dark' : 'light'
-					}`,
-				}),
-			1
-		);
-	}, [location.search, dark, french]);
+		if (location.pathname !== '/') {
+			history.push({
+				pathname: location.pathname,
+				search: `?lan=${french ? 'fr' : 'en'}&theme=${dark ? 'dark' : 'light'}`,
+			});
+		}
+	}, [location.pathname, location.search, dark, french]);
 
 	return (
 		<Layout>

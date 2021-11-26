@@ -14,7 +14,7 @@ const Projects: React.FC = () => {
 	const dark = useSelector((state: RootState) => state.theme.dark);
 	const theme = useSelector((state: RootState) => state.theme);
 
-	const filterHandler = (action: string) => {
+	const filterHandler = (action: string): void => {
 		dispatch({ type: 'RESET' });
 		dispatch({ type: action });
 	};

@@ -8,7 +8,7 @@ interface Props {
 	img?: string;
 	text: string;
 	alt: string;
-	svg?: any;
+	svg?: HTMLOrSVGElement;
 }
 
 const StackItem: React.FC<Props> = (props) => {

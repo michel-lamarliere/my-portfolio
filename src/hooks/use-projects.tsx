@@ -90,7 +90,21 @@ export const useProjects = (fn: string) => {
 		},
 	];
 
-	const newProjectItem = (project: any) => {
+	interface Project {
+		id: string;
+		name: string;
+		description: string;
+		img: string;
+		technos: string[];
+		technosIcons: string[];
+		website: string;
+		github: string;
+		firstPage?: boolean;
+		goToWebsite?: boolean;
+		publicGithub?: boolean;
+	}
+
+	const newProjectItem = (project: Project) => {
 		return (
 			<ProjectItem
 				key={project.id}
@@ -112,30 +126,31 @@ export const useProjects = (fn: string) => {
 			.map((project) => newProjectItem(project));
 	}
 
-	const whichTechno = () => {
-		for (const key in filter) {
-			if (filter[key]) {
+	const whichTechno = (): string => {
+		for (const techno in filter) {
+			if (filter[techno]) {
 				for (let i = 0; i < projectStore.length; i++) {
-					if (projectStore[i].technos.indexOf(key) >= 0) {
-						return key;
+					if (projectStore[i].technos.indexOf(techno) >= 0) {
+						return techno;
 					}
 				}
 			}
 		}
+		return 'error';
 	};
 
 	if (fn === 'PROJECTS') {
-		const filteredTechno = whichTechno();
+		const filteredTechno: string = whichTechno();
 		if (filter.all) {
-			return projectStore.map((project: any) => newProjectItem(project));
+			return projectStore.map((project) => newProjectItem(project));
 		} else if (
-			projectStore.filter(
-				(project: any) => project.technos.indexOf(filteredTechno) >= 0
-			)
+			projectStore.filter((project) => project.technos.indexOf(filteredTechno) >= 0)
 		) {
 			return projectStore
-				.filter((project: any) => project.technos.indexOf(filteredTechno) >= 0)
-				.map((project: any) => newProjectItem(project));
+				.filter(
+					(project: Project) => project.technos.indexOf(filteredTechno) >= 0
+				)
+				.map((project: Project) => newProjectItem(project));
 		}
 	}
 };

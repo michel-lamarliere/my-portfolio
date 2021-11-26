@@ -18,7 +18,7 @@ interface initialStateObj {
 	googleCloud: boolean;
 	wordpress: boolean;
 	api: boolean;
-	[key: string]: boolean;
+	[techno: string]: boolean;
 }
 
 interface actionObj {
