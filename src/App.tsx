@@ -57,7 +57,8 @@ const App: React.FC = () => {
 	useEffect(() => {
 		if (location.pathname !== '/') {
 			history.push({
-				pathname: location.pathname,
+				pathname: history.location.pathname,
+				hash: history.location.hash,
 				search: `?lan=${french ? 'fr' : 'en'}&theme=${dark ? 'dark' : 'light'}`,
 			});
 		}
@@ -68,9 +69,7 @@ const App: React.FC = () => {
 			<Overlay />
 			<ScrollToTop />
 			<Switch>
-				<Route path='/' exact>
-					<Redirect to='/home' />
-				</Route>
+				<Redirect exact from='/' to='/home' />
 				<Route path='/home'>
 					<Homepage />
 				</Route>
