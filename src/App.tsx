@@ -32,6 +32,13 @@ const App: React.FC = () => {
 	}, [dark]);
 
 	useEffect(() => {
+		let isFrench;
+		let isDark;
+		if (queryParams) {
+			isFrench = queryParams.get('lan');
+			isDark = queryParams.get('theme');
+		}
+		console.log(isFrench);
 		let language;
 		let localTheme;
 		if (localStorage) {
@@ -39,30 +46,28 @@ const App: React.FC = () => {
 			localTheme = localStorage.getItem('theme');
 		}
 		// LANGUAGE
-		if ((language === 'french' && !french) || queryParams.get('lan') === 'fr') {
+		if ((language === 'french' && !french) || isFrench === 'fr') {
 			dispatch({ type: 'LANGUAGE TOGGLE' });
 		}
-		if ((language === 'english' && french) || queryParams.get('lan') === 'en') {
+		if ((language === 'english' && french) || isFrench === 'en') {
 			dispatch({ type: 'LANGUAGE TOGGLE' });
 		}
 		// THEME
-		if ((localTheme === 'light' && dark) || queryParams.get('theme') === 'light') {
+		if ((localTheme === 'light' && dark) || isDark === 'light') {
 			dispatch({ type: 'THEME TOGGLE' });
 		}
-		if ((localTheme === 'dark' && !dark) || queryParams.get('theme') === 'dark') {
+		if ((localTheme === 'dark' && !dark) || isDark === 'dark') {
 			dispatch({ type: 'THEME TOGGLE' });
 		}
 	}, []);
 
 	useEffect(() => {
-		if (location.pathname !== '/') {
-			history.push({
-				pathname: history.location.pathname,
-				hash: history.location.hash,
-				search: `?lan=${french ? 'fr' : 'en'}&theme=${dark ? 'dark' : 'light'}`,
-			});
-		}
-	}, [location.pathname, location.search, dark, french]);
+		history.push({
+			pathname: history.location.pathname,
+			hash: history.location.hash,
+			search: `?lan=${french ? 'fr' : 'en'}&theme=${dark ? 'dark' : 'light'}`,
+		});
+	}, [french, dark, location.pathname, location.hash]);
 
 	return (
 		<Layout>

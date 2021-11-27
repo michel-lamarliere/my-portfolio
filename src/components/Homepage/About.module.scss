@@ -11,13 +11,17 @@
 	max-height: 15rem;
 }
 
-.text {
+.text_wrapper {
 	font-family: $fontLight;
 	font-size: 16px;
 
 	& > p:nth-child(1) {
 		margin-top: 0;
 	}
+}
+
+.text {
+	margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 375px) {

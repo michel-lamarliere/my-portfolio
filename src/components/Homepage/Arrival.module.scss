@@ -9,18 +9,18 @@
 }
 
 .logo {
-	height: 1.85rem;
+	height: calc(1.85rem + 5vw);
 }
 
 .name {
 	font-family: $fontBold;
-	font-size: 32px;
+	font-size: calc(22px + 2vw);
 	text-align: center;
 }
 
 .title {
 	font-family: $fontBold;
-	font-size: 15px;
+	font-size: calc(12px + 0.5vw);
 }
 
 .slide {
@@ -32,25 +32,6 @@
 	place-items: center;
 
 	& img {
-		width: 2.5rem;
-		height: 2.5rem;
-	}
-}
-
-@media screen and (min-width: 768px) {
-	.logo {
-		height: calc(1.85rem + 3vw);
-	}
-
-	.name {
-		font-size: calc(18px + 2vw);
-	}
-
-	.title {
-		font-size: calc(15px + 0.5vw);
-	}
-
-	.slide img {
 		width: calc(2.5rem + 0.5vw);
 		height: calc(2.5rem + 0.5vw);
 	}
