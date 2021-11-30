@@ -1,0 +1,15 @@
+@import '../../../shared/variables.scss';
+
+.contact {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.text {
+	font-size: 17px;
+}
+
+.lign {
+	margin-top: 0;
+}

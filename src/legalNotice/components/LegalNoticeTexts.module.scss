@@ -1,0 +1,34 @@
+@import '../../shared/variables.scss';
+
+.title_wrapper {
+	font-family: $fontSemiBold;
+	font-size: 16px;
+}
+
+.section_wrapper {
+	font-family: $fontMedium;
+	font-size: 16px;
+	text-indent: 1rem;
+}
+
+.text_wrapper {
+	font-family: $fontLight;
+	font-size: 14px;
+	margin-top: 1rem;
+	margin-bottom: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.title_wrapper {
+		font-size: 18px;
+	}
+
+	.section_wrapper {
+		font-size: 18px;
+		text-indent: 4rem;
+	}
+
+	.text_wrapper {
+		font-size: 16px;
+	}
+}

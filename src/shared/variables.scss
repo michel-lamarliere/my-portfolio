@@ -1,0 +1,39 @@
+@font-face {
+	font-family: Poppins-Medium;
+	src: url('../assets/fonts/Poppins-Medium.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Bold;
+	src: url('../assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Semi-Bold;
+	src: url('../assets/fonts/Poppins-SemiBold.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Medium-Italic;
+	src: url('../assets/fonts/Poppins-MediumItalic.ttf');
+}
+
+@font-face {
+	font-family: Poppins-Light;
+	src: url('../assets/fonts/Poppins-Light.ttf');
+}
+
+$fontMedium: Poppins-Medium;
+$fontBold: Poppins-Bold;
+$fontSemiBold: Poppins-Semi-Bold;
+$fontMediumItalic: Poppins-Medium-Italic;
+$fontLight: Poppins-Light;
+
+$colorWhite: #ffffff;
+$colorBlack: #000000;
+$colorLightGrey: #dadce6;
+$colorPurple: #808dc3;
+$colorGrey: #3b3c48;
+$colorDarkGrey: #2d3246;
+$colorVeryDarkGrey: #1d1e27;
+$colorOrange: #ed6544;

@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-dom';
 
-import Layout from './components/_Layout/Layout';
-import MobileMenu from './components/_Layout/Mobile/MobileMenu';
-import Overlay from './components/_Layout/Mobile/Overlay';
-import Homepage from './pages/Homepage';
-import Projects from './pages/Projects';
+import Layout from './layout/Layout';
+import MobileMenu from './layout/Mobile/MobileMenu';
+import Overlay from './layout/Mobile/Overlay';
+import Homepage from './homepage/pages/Homepage';
+import Projects from './projects/pages/Projects';
 import Error from './pages/Error';
-import ScrollToTop from './ScrollToTop';
+import ScrollToTop from './shared/ScrollToTop';
 import { RootState } from './store/store';
-import LegalNotice from './pages/LegalNotice';
+import LegalNotice from './legalNotice/pages/LegalNotice';
 
 const App: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
