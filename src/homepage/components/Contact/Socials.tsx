@@ -1,11 +1,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
+import { RootState } from '../../../shared/store/store';
 import classes from './Socials.module.scss';
 
 import TitleLign from '../TitleLign';
 
-import { LogoGitHub, LogoMalt, LogoLinkedin } from '../../../shared/SVGLogos';
+import {
+	LogoGitHub,
+	LogoMalt,
+	LogoLinkedin,
+} from '../../../shared/components/UI/SVGLogos';
 
 interface Props {
 	className: string;

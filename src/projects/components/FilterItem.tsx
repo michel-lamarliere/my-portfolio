@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './FilterItem.module.scss';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../shared/store/store';
 
 interface FilterItemProps {
 	onClick: () => {};

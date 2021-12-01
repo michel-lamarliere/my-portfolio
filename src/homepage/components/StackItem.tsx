@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './StackItem.module.scss';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../shared/store/store';
 
 interface Props {
 	img?: string;

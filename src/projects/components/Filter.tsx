@@ -3,14 +3,14 @@ import Border from './Filter.module.scss';
 
 import FilterItem from './FilterItem';
 
-import reactIcon from '../../assets/icons/react.svg';
-import reduxIcon from '../../assets/icons/redux.svg';
-import typescriptIcon from '../../assets/icons/typescript.svg';
-import wordpressIcon from '../../assets/icons/wordpress.svg';
-import googleCloudIcon from '../../assets/icons/googlecloud.svg';
-import firebaseIcon from '../../assets/icons/firebase.svg';
-import apiIcon from '../../assets/icons/api.svg';
-import { RootState } from '../../store/store';
+import reactIcon from '../../shared/assets/icons/react.svg';
+import reduxIcon from '../../shared/assets/icons/redux.svg';
+import typescriptIcon from '../../shared/assets/icons/typescript.svg';
+import wordpressIcon from '../../shared/assets/icons/wordpress.svg';
+import googleCloudIcon from '../../shared/assets/icons/googlecloud.svg';
+import firebaseIcon from '../../shared/assets/icons/firebase.svg';
+import apiIcon from '../../shared/assets/icons/api.svg';
+import { RootState } from '../../shared/store/store';
 import { useSelector } from 'react-redux';
 
 interface Props {

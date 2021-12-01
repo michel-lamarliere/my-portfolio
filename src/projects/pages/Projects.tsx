@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import Border from './Projects.module.scss';
 import Filter from '../components/Filter';
 
-import { ContactBtn } from '../../shared/Buttons';
-import { RootState } from '../../store/store';
-import { useProjects } from '../../hooks/use-projects';
+import { ContactBtn } from '../../shared/components/UI/Buttons';
+import { RootState } from '../../shared/store/store';
+import { useProjects } from '../../shared/hooks/use-projects';
 
 const Projects: React.FC = () => {
 	const dispatch = useDispatch();

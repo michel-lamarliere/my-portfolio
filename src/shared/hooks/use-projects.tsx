@@ -15,7 +15,7 @@ import googleCloudIcon from '../assets/icons/googlecloud.svg';
 import firebaseIcon from '../assets/icons/firebase.svg';
 import apiIcon from '../assets/icons/api.svg';
 
-import ProjectItem from '../projects/components/ProjectItem';
+import ProjectItem from '../../projects/components/ProjectItem';
 
 export const useProjects = (fn: string) => {
 	const french = useSelector((state: RootState) => state.language.french);

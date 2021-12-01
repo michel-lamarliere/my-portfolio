@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { LogoML } from '../../shared/SVGLogos';
+import { RootState } from '../../shared/store/store';
+import { LogoML } from '../../shared/components/UI/SVGLogos';
 import classes from './Arrival.module.scss';
-import arrow from '../../assets/icons/arrow.svg';
+import arrow from '../../shared/assets/icons/arrow.svg';
 
 interface Props {
 	arrowHandler: () => void;

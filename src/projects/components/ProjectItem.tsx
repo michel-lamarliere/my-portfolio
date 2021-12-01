@@ -2,8 +2,8 @@ import React from 'react';
 import classes from './ProjectItem.module.scss';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
-import { LogoGitHub, LogoNewTab } from '../../shared/SVGLogos';
+import { RootState } from '../../shared/store/store';
+import { LogoGitHub, LogoNewTab } from '../../shared/components/UI/SVGLogos';
 
 interface Props {
 	title: string;

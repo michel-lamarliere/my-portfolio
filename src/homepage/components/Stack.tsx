@@ -2,23 +2,23 @@ import React from 'react';
 import classes from './Stack.module.scss';
 import StackItem, { ThemedStackItem } from './StackItem';
 
-import htmlIcon from '../../assets/icons/html.svg';
-import cssIcon from '../../assets/icons/css.svg';
-import sassIcon from '../../assets/icons/sass.svg';
-import javascriptIcon from '../../assets/icons/javascript.svg';
-import typescriptIcon from '../../assets/icons/typescript.svg';
-import reactIcon from '../../assets/icons/react.svg';
-import reduxIcon from '../../assets/icons/redux.svg';
-import npmIcon from '../../assets/icons/npm.svg';
-import webpackIcon from '../../assets/icons/webpack.svg';
-import firebaseIcon from '../../assets/icons/firebase.svg';
-import googleCloudIcon from '../../assets/icons/googlecloud.svg';
-import gitIcon from '../../assets/icons/git.svg';
-import wordpressIcon from '../../assets/icons/wordpress.svg';
+import htmlIcon from '../../shared/assets/icons/html.svg';
+import cssIcon from '../../shared/assets/icons/css.svg';
+import sassIcon from '../../shared/assets/icons/sass.svg';
+import javascriptIcon from '../../shared/assets/icons/javascript.svg';
+import typescriptIcon from '../../shared/assets/icons/typescript.svg';
+import reactIcon from '../../shared/assets/icons/react.svg';
+import reduxIcon from '../../shared/assets/icons/redux.svg';
+import npmIcon from '../../shared/assets/icons/npm.svg';
+import webpackIcon from '../../shared/assets/icons/webpack.svg';
+import firebaseIcon from '../../shared/assets/icons/firebase.svg';
+import googleCloudIcon from '../../shared/assets/icons/googlecloud.svg';
+import gitIcon from '../../shared/assets/icons/git.svg';
+import wordpressIcon from '../../shared/assets/icons/wordpress.svg';
 import TitleLign from './TitleLign';
-import { RootState } from '../../store/store';
+import { RootState } from '../../shared/store/store';
 import { useSelector } from 'react-redux';
-import { LogoGitHub } from '../../shared/SVGLogos';
+import { LogoGitHub } from '../../shared/components/UI/SVGLogos';
 
 const Stack = React.forwardRef<HTMLDivElement>((props, ref) => {
 	const french = useSelector((state: RootState) => state.language.french);

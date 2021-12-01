@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { RootState } from '../store/store';
+import { RootState } from '../../store/store';
 import classes from './Buttons.module.scss';
 
 export const ContactBtn: React.FC = () => {

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { useTransition, animated } from 'react-spring';
 import { RootState } from '../../store/store';
-import { LogoML, LogoTheme } from '../../shared/SVGLogos';
+import { LogoML, LogoTheme } from '../UI/SVGLogos';
 import classes from './MobileMenu.module.scss';
 import './MobileMenu.module.scss';
 

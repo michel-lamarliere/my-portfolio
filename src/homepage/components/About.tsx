@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../shared/store/store';
 import classes from './About.module.scss';
 
 import TitleLign from './TitleLign';
-import imgPlaceholder from '../../assets/img/ml_temp.jpg';
+import imgPlaceholder from '../../shared/assets/img/ml_temp.jpg';
 
 const About: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);

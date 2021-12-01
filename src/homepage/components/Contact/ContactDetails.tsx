@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
+import { RootState } from '../../../shared/store/store';
 import classes from './ContactDetails.module.scss';
 
 import TitleLign from '../TitleLign';

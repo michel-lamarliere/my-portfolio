@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import classes from './Header.module.scss';
 
-import { LogoML, LogoTheme } from '../../shared/SVGLogos';
+import { LogoML, LogoTheme } from '../UI/SVGLogos';
 import { RootState } from '../../store/store';
 
 const Header: React.FC = () => {

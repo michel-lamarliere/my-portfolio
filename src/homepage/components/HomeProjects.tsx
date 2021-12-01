@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { RootState } from '../../shared/store/store';
 import classes from './HomeProjects.module.scss';
 
 import TitleLign from './TitleLign';
-import { useProjects } from '../../hooks/use-projects';
-import { LogoLeftArrow, LogoRightArrow } from '../../shared/SVGLogos';
+import { useProjects } from '../../shared/hooks/use-projects';
+import { LogoLeftArrow, LogoRightArrow } from '../../shared/components/UI/SVGLogos';
 
 const HomeProjects: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);

@@ -6,7 +6,7 @@ import Socials from '../components/Contact/Socials';
 import ContactDetails from '../components/Contact/ContactDetails';
 import Form from '../components/Contact/Form';
 import Stack from '../components/Stack';
-import { SeeMore } from '../../shared/Buttons';
+import { SeeMore } from '../../shared/components/UI/Buttons';
 import classes from './Homepage.module.scss';
 
 const Homepage: React.FC = () => {

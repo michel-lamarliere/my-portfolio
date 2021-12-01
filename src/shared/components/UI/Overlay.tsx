@@ -3,7 +3,7 @@ import classes from './Overlay.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useTransition, animated } from 'react-spring';
 import { RootState } from '../../store/store';
-import MobileMenu from './MobileMenu';
+import MobileMenu from '../Mobile/MobileMenu';
 
 const Overlay: React.FC = () => {
 	const opened = useSelector((state: RootState) => state.mobileMenu.open);
