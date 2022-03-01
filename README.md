@@ -1,4 +1,4 @@
-![Image](https://storage.cloud.google.com/github-projects-images/favicon-32x32.png)
+![Logo](gs://github-projects-images/android-chrome-512x512.png)
 
 ## Mon Portfolio | Projet Personnel
 
