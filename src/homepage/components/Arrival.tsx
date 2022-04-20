@@ -35,7 +35,7 @@ const Arrival: React.FC<Props> = (props) => {
 						color: dark ? theme.darkTheme.white : theme.lightTheme.white,
 					}}
 				>
-					{french ? 'DÉVELOPPEUR FRONT END' : 'FRONT END DEVELOPER'}
+					{french ? 'DÉVELOPPEUR FULL STACK' : 'FULL STACK DEVELOPER'}
 				</div>
 			</div>
 			<div className={classes.slide} onClick={props.arrowHandler}>

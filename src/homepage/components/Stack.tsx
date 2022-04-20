@@ -15,7 +15,12 @@ import firebaseIcon from '../../shared/assets/icons/firebase.svg';
 import googleCloudIcon from '../../shared/assets/icons/googlecloud.svg';
 import gitIcon from '../../shared/assets/icons/git.svg';
 import wordpressIcon from '../../shared/assets/icons/wordpress.svg';
+import nodejsIcon from '../../shared/assets/icons/nodejs.svg';
+import expressjsIcon from '../../shared/assets/icons/express.png';
+import mongodbIcon from '../../shared/assets/icons/mongodb.svg';
+
 import TitleLign from './TitleLign';
+
 import { RootState } from '../../shared/store/store';
 import { useSelector } from 'react-redux';
 import { LogoGitHub } from '../../shared/components/UI/SVGLogos';
@@ -39,6 +44,9 @@ const Stack = React.forwardRef<HTMLDivElement>((props, ref) => {
 				<StackItem img={typescriptIcon} alt='typescript' text='TypeScript' />
 				<StackItem img={reactIcon} alt='react' text='React' />
 				<StackItem img={reduxIcon} alt='redux' text='Redux' />
+				<StackItem img={nodejsIcon} alt='nodejs' text='NodeJS' />
+				<StackItem img={expressjsIcon} alt='expressjs' text='ExpressJS' />
+				<StackItem img={mongodbIcon} alt='mongodb' text='MongoDB' />
 				<StackItem img={npmIcon} alt='npm' text='npm' />
 				<StackItem img={webpackIcon} alt='webpack' text='Webpack' />
 				<StackItem img={googleCloudIcon} alt='Google Cloud' text='Google Cl.' />

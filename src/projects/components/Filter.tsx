@@ -12,7 +12,7 @@ import firebaseIcon from '../../shared/assets/icons/firebase.svg';
 import apiIcon from '../../shared/assets/icons/api.svg';
 import nodejsIcon from '../../shared/assets/icons/node-js.png';
 import expressIcon from '../../shared/assets/icons/express.png';
-import mongodbIcon from '../../shared/assets/icons/mongodb.png';
+import mongodbIcon from '../../shared/assets/icons/mongodb.svg';
 
 import { RootState } from '../../shared/store/store';
 import { useSelector } from 'react-redux';

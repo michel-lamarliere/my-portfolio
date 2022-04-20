@@ -29,8 +29,8 @@ const About: React.FC = () => {
 					{french ? (
 						<>
 							<div className={classes.text}>
-								Je m’appelle Michel et je suis Dévelopeur Front-End sur
-								Toulouse.
+								Je m’appelle Michel et je suis un développeur full stack
+								basé à Toulouse.
 							</div>
 							<div className={classes.text}>
 								Après avoir décroché ma licence en langues étrangères,
@@ -47,7 +47,7 @@ const About: React.FC = () => {
 								travail, je sais m’adapter afin de créer des sites
 								rapides, responsives et sécurisés.
 							</div>
-							<div className={classes.text}>
+							{/* <div className={classes.text}>
 								Je peux intervenir dans des projets qui nécessitent de :
 								<div style={{ marginLeft: '2rem', marginTop: '0' }}>
 									- intégrer une maquette
@@ -56,7 +56,7 @@ const About: React.FC = () => {
 									<br />- créer un site web dynamique (API, base de
 									données)
 								</div>
-							</div>
+							</div> */}
 							<div className={classes.text}>
 								N’hésitez pas à me contacter, je ferai de mon mieux pour
 								vous répondre le plus rapidement possible !
@@ -65,7 +65,7 @@ const About: React.FC = () => {
 					) : (
 						<>
 							<div className={classes.text}>
-								Hi, I’m Michel, a Frond-End Developer from Toulouse,
+								Hi, I’m Michel, a full stack developer from Toulouse,
 								France.
 							</div>
 							<div className={classes.text}>
@@ -83,7 +83,7 @@ const About: React.FC = () => {
 								programmer who knows how to adapt my way of working to the
 								project.
 							</div>
-							<div className={classes.text}>
+							{/* <div className={classes.text}>
 								I am able to intervene or build from the ground up
 								projects that require to:
 								<div style={{ marginLeft: '2rem', marginTop: '0' }}>
@@ -92,7 +92,7 @@ const About: React.FC = () => {
 									page)
 									<br />- build a dynamic website (APIs, databases)
 								</div>
-							</div>
+							</div> */}
 							<div className={classes.text}>
 								If you have any questions, please fell free to use the
 								contact form and I’ll get back to you as possible!
