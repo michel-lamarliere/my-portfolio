@@ -5,6 +5,7 @@ import classes from './About.module.scss';
 
 import TitleLign from './TitleLign';
 import imgPlaceholder from '../../shared/assets/img/ml_temp.jpg';
+import mlImg from '../../shared/assets/img/ml.jpg';
 
 const About: React.FC = () => {
 	const french = useSelector((state: RootState) => state.language.french);
@@ -15,11 +16,7 @@ const About: React.FC = () => {
 		<>
 			<TitleLign text={french ? 'Qui suis-je?' : 'About Me'} />
 			<div className={classes.wrapper}>
-				<img
-					src={imgPlaceholder}
-					alt={french ? 'Moi' : 'Me'}
-					className={classes.img}
-				/>
+				<img src={mlImg} alt={french ? 'Moi' : 'Me'} className={classes.img} />
 				<div
 					className={classes.text_wrapper}
 					style={{
