@@ -7,6 +7,9 @@ const initialStateReducer = {
 	googleCloud: false,
 	wordpress: false,
 	api: false,
+	nodejs: false,
+	expressjs: false,
+	mongodb: false,
 };
 
 interface initialStateObj {
@@ -18,6 +21,9 @@ interface initialStateObj {
 	googleCloud: boolean;
 	wordpress: boolean;
 	api: boolean;
+	nodejs: boolean;
+	expressjs: boolean;
+	mongodb: boolean;
 	[techno: string]: boolean;
 }
 
@@ -70,6 +76,21 @@ const filterReducer = (
 				...state,
 				api: !state.api,
 			};
+		case 'NODEJS':
+			return {
+				...state,
+				nodejs: !state.api,
+			};
+		case 'EXPRESSJS':
+			return {
+				...state,
+				expressjs: !state.api,
+			};
+		case 'MONGODB':
+			return {
+				...state,
+				mongodb: !state.api,
+			};
 		case 'RESET':
 			return {
 				all: false,
@@ -80,6 +101,9 @@ const filterReducer = (
 				firebase: false,
 				wordpress: false,
 				api: false,
+				nodejs: false,
+				expressjs: false,
+				mongodb: false,
 			};
 		default:
 			return state;

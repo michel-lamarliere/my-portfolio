@@ -10,6 +10,10 @@ import wordpressIcon from '../../shared/assets/icons/wordpress.svg';
 import googleCloudIcon from '../../shared/assets/icons/googlecloud.svg';
 import firebaseIcon from '../../shared/assets/icons/firebase.svg';
 import apiIcon from '../../shared/assets/icons/api.svg';
+import nodejsIcon from '../../shared/assets/icons/node-js.png';
+import expressIcon from '../../shared/assets/icons/express.png';
+import mongodbIcon from '../../shared/assets/icons/mongodb.png';
+
 import { RootState } from '../../shared/store/store';
 import { useSelector } from 'react-redux';
 
@@ -30,6 +34,12 @@ interface Props {
 	firebaseBorder: string;
 	apiHandler: any;
 	apiBorder: string;
+	nodeJsHandler: any;
+	nodeJsBorder: string;
+	expressJsHandler: any;
+	expressJsBorder: string;
+	mongoDBHandler: any;
+	mongoDBBorder: string;
 }
 
 const Filter: React.FC<Props> = (props) => {
@@ -63,6 +73,27 @@ const Filter: React.FC<Props> = (props) => {
 				src={typescriptIcon}
 				onClick={props.typescriptHandler}
 				border={props.typescriptBorder}
+			/>
+			<FilterItem
+				text='NodeJs'
+				alt='NodeJs'
+				src={nodejsIcon}
+				onClick={props.nodeJsHandler}
+				border={props.nodeJsBorder}
+			/>
+			<FilterItem
+				text='ExpressJs'
+				alt='ExpressJs'
+				src={expressIcon}
+				onClick={props.expressJsHandler}
+				border={props.expressJsBorder}
+			/>
+			<FilterItem
+				text='MongoDB'
+				alt='MongoDB'
+				src={mongodbIcon}
+				onClick={props.mongoDBHandler}
+				border={props.mongoDBBorder}
 			/>
 			<FilterItem
 				text='Wordpress'

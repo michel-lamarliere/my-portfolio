@@ -31,6 +31,9 @@ const Projects: React.FC = () => {
 	const firebaseBorder = filter.firebase ? borderColor : '';
 	const wordpressBorder = filter.wordpress ? borderColor : '';
 	const apiBorder = filter.api ? borderColor : '';
+	const nodeJsBorder = filter.nodejs ? borderColor : '';
+	const expressJsBorder = filter.expressjs ? borderColor : '';
+	const mongoDBBorder = filter.mongodb ? borderColor : '';
 
 	return (
 		<>
@@ -52,6 +55,12 @@ const Projects: React.FC = () => {
 					wordpressBorder={wordpressBorder}
 					apiHandler={() => filterHandler('API')}
 					apiBorder={apiBorder}
+					nodeJsHandler={() => filterHandler('NODEJS')}
+					nodeJsBorder={nodeJsBorder}
+					expressJsHandler={() => filterHandler('EXPRESSJS')}
+					expressJsBorder={expressJsBorder}
+					mongoDBHandler={() => filterHandler('MONGODB')}
+					mongoDBBorder={mongoDBBorder}
 				/>
 				<div className={Border.projects}>{projects}</div>
 			</div>

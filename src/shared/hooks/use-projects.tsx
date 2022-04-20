@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 
+import sixAppImg from '../assets/img/dark_six-app.png';
 import CegaImg from '../assets/img/dark_cega.png';
 import EnolaImg from '../assets/img/dark_enola.png';
 import WeatherImg from '../assets/img/dark_meteo.png';
@@ -14,6 +15,9 @@ import wordpressIcon from '../assets/icons/wordpress.svg';
 import googleCloudIcon from '../assets/icons/googlecloud.svg';
 import firebaseIcon from '../assets/icons/firebase.svg';
 import apiIcon from '../assets/icons/api.svg';
+import nodejsIcon from '../assets/icons/node-js.png';
+import expressIcon from '../assets/icons/express.png';
+import mongodbIcon from '../assets/icons/mongodb.png';
 
 import ProjectItem from '../../projects/components/ProjectItem';
 
@@ -31,6 +35,25 @@ export const useProjects = (fn: string) => {
 
 	const projectStore = [
 		{
+			id: '00',
+			name: 'Six App',
+			description: perso,
+			img: sixAppImg,
+			technos: ['react', 'redux', 'typescript', 'nodejs', 'expressjs', 'mongodb'],
+			technosIcons: [
+				reactIcon,
+				reduxIcon,
+				typescriptIcon,
+				nodejsIcon,
+				expressIcon,
+				mongodbIcon,
+			],
+			website: 'https://six-app.com',
+			github: 'https://github.com/michel-lamarliere/six-app',
+			firstPage: true,
+			goToWebsite: true,
+		},
+		{
 			id: '01',
 			name: 'CEGA',
 			description: pro,
@@ -39,7 +62,7 @@ export const useProjects = (fn: string) => {
 			technosIcons: [reactIcon, reduxIcon, typescriptIcon],
 			website: 'https://cega-audit.com',
 			github: 'https://github.com/michel-lamarliere/cega',
-			firstPage: true,
+			firstPage: false,
 			goToWebsite: false,
 		},
 		{
