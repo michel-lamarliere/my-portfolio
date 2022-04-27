@@ -74,7 +74,6 @@ export const LogoMalt: React.FC<LogoObj> = (props) => {
 		</svg>
 	);
 };
-git;
 
 export const LogoLinkedin: React.FC<LogoObj> = (props) => {
 	return (
