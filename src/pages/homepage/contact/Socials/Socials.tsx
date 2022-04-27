@@ -27,9 +27,10 @@ const Socials: React.FC<Props> = (props) => {
 					href='https://www.linkedin.com/in/michel-lamarliere/'
 					target='_blank'
 					rel='noreferrer'
+					className={classes.socials__link}
 				>
 					<LogoLinkedin
-						className={classes.socials_logo}
+						className={classes.socials__link__logo}
 						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
 					/>
 				</a>
@@ -37,9 +38,10 @@ const Socials: React.FC<Props> = (props) => {
 					href='https://www.malt.fr/dashboard/freelancer'
 					target='_blank'
 					rel='noreferrer'
+					className={classes.socials__link}
 				>
 					<LogoMalt
-						className={classes.socials_logo}
+						className={classes.socials__link__logo}
 						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
 					/>
 				</a>
@@ -47,9 +49,10 @@ const Socials: React.FC<Props> = (props) => {
 					href='https://github.com/michel-lamarliere'
 					target='_blank'
 					rel='noreferrer'
+					className={classes.socials__link}
 				>
 					<LogoGitHub
-						className={classes.socials_logo}
+						className={classes.socials__link__logo}
 						fill={dark ? theme.darkTheme.white : theme.lightTheme.white}
 					/>
 				</a>
