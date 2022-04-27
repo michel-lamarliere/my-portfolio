@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Switch, Route, Redirect, useHistory, useLocation } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import Header from './shared/components/layout/Header';
-import Footer from './shared/components/layout/Footer';
-import MobileMenu from './shared/components/Mobile/MobileMenu';
-import Overlay from './shared/components/UI/Overlay';
-import Homepage from './homepage/pages/Homepage';
-import Projects from './projects/pages/Projects';
-import Error from './error/pages/Error';
-import ScrollToTop from './shared/util/ScrollToTop';
-import { RootState } from './shared/store/store';
-import LegalNotice from './legalNotice/pages/LegalNotice';
+import { RootState } from './store/store';
+
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import MobileMenu from './components/MobileMenu/MobileMenu';
+import Overlay from './components/UI/Overlay';
+import Homepage from './pages/homepage/HomepagePage/HomepagePage';
+import Projects from './pages/projects/ProjectsPage/ProjectsPage';
+import Error from './pages/ErrorPage/ErrorPage';
+import ScrollToTop from './utils/ScrollToTop';
+import LegalNotice from './pages/legalNotice/LegalNoticePage/LegalNoticePage';
 
 const App: React.FC = () => {
-	const french = useSelector((state: RootState) => state.language.french);
 	const dark = useSelector((state: RootState) => state.theme.dark);
 	const theme = useSelector((state: RootState) => state.theme);
 

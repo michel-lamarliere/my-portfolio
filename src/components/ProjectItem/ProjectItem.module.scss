@@ -1,0 +1,90 @@
+@import '../../style/variables.scss';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	border-radius: 0.5rem;
+	transition: all ease-in-out 0.3s;
+}
+
+.main-img {
+	border-radius: 0.5rem 0.5rem 0 0;
+	width: 100%;
+	height: 90%;
+
+	&__img {
+		object-fit: contain;
+	}
+}
+
+.footer {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+	padding: 0.6rem;
+}
+
+.title {
+	font-family: $fontSemiBold;
+	font-size: 18px;
+}
+
+.description {
+	font-family: $fontMediumItalic;
+	font-size: 14px;
+	color: $colorPurple;
+}
+
+.stack {
+	display: flex;
+	gap: 0.5rem;
+
+	&_item {
+		width: 1.2rem;
+		height: 1.2rem;
+		background: none;
+		object-fit: contain;
+	}
+}
+
+.links {
+	position: absolute;
+	right: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	& img {
+		display: grid;
+		place-content: center;
+		width: 1.2rem;
+		height: 1.2rem;
+		object-fit: contain;
+		border-radius: 0;
+	}
+}
+
+.empty {
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 0;
+}
+
+@media screen and (min-width: 500px) {
+	.wrapper {
+		min-width: 13.5rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.wrapper {
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@import '../../../../style/variables.scss';
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+input,
+textarea {
+	padding: 0.5rem 1rem;
+	border: solid 0.1rem $colorGrey;
+	border-radius: 0.2rem;
+	font-family: $fontMedium;
+	font-size: 16px;
+	resize: none;
+
+	&::placeholder {
+		color: $colorPurple;
+		opacity: 1;
+	}
+
+	&:focus {
+		border: solid 0.1rem $colorPurple;
+		outline: none;
+	}
+}
+
+.submit {
+	width: 5.3rem;
+	margin-top: 0.5rem;
+	padding: 0.4em 1.05em;
+	border-radius: 0.2rem;
+	font-size: 16px;
+	cursor: pointer;
+
+	&:active {
+		background-color: $colorOrange;
+		color: $colorWhite;
+	}
+
+	&:disabled {
+		background-color: $colorWhite;
+		color: $colorLightGrey;
+		border: solid 1px $colorLightGrey;
+		cursor: not-allowed;
+	}
+}
+
+.sent {
+	text-align: center;
+	font-size: 15px;
+	color: $colorOrange;
+}
+
+.invalid {
+	border: solid 0.1rem $colorOrange !important;
+
+	&_text {
+		font-size: 12px;
+	}
+}
