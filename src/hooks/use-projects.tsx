@@ -48,10 +48,10 @@ export const useProjects = (fn: string) => {
 				expressIcon,
 				mongodbIcon,
 			],
-			website: 'https://six-app.com',
+			website: '',
 			github: 'https://github.com/michel-lamarliere/six-app',
 			firstPage: true,
-			goToWebsite: true,
+			goToWebsite: false,
 		},
 		{
 			id: '01',
