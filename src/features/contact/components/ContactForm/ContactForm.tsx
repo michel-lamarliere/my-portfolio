@@ -7,7 +7,7 @@ import classnames from "classnames";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FieldValues, useForm } from "react-hook-form";
 
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 
 import classes from "./ContactForm.module.scss";
 

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 import { projets } from "../../constants/projects";
 import { Project } from "@/features/projects/components/Project/Project";
 

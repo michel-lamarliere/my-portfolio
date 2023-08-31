@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 
 import gitHubIcon from "@/assets/icons/github.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";

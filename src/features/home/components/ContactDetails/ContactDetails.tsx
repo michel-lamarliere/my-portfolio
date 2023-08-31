@@ -1,6 +1,6 @@
 import React from "react";
 
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 
 import classes from "src/features/home/components/ContactDetails/ContactDetails.module.scss";
 

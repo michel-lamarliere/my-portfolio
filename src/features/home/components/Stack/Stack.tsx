@@ -3,7 +3,7 @@
 import React from "react";
 
 import { StackItem } from "@/features/home/components/Stack/StackItem/StackItem";
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 
 import sassIcon from "src/assets/icons/sass.svg";
 import javascriptIcon from "src/assets/icons/javascript.svg";

@@ -9,7 +9,7 @@ import { Socials } from "@/features/home/components/Socials/Socials";
 import { ContactDetails } from "@/features/home/components/ContactDetails/ContactDetails";
 import { Form } from "@/features/contact/components/ContactForm/ContactForm";
 import { Projects } from "@/features/projects/components/Projects/Projects";
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 
 import classes from "./home-page.module.scss";
 

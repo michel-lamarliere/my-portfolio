@@ -1,6 +1,0 @@
-@use "../styles/export" as imported;
-
-.layout {
-  @include imported.minHeight;
-  @include imported.container;
-}

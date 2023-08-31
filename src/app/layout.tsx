@@ -1,11 +1,17 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
 
+import { Rubik } from "next/font/google";
+
 import { Footer } from "@/containers/layout/Footer";
 import { AppElements } from "@/providers/AppElements";
 
-import classes from "./layout.module.scss";
 import "./../styles/globals.scss";
+
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--rubik"
+});
 
 type RootLayoutProps = {
   children: ReactNode;
@@ -55,7 +61,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="fr">
       <body>
         <AppElements />
-        <main className={classes.layout}>{children}</main>
+        <main className={`container-custom minHeight ${rubik}`}>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

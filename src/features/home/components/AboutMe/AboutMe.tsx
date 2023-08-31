@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import Image from "next/image";
 
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import { TitleLine } from "@/components/UI/TitleLine";
 
 import mlImg from "src/assets/img/ml.jpg";
 
