@@ -1,0 +1,48 @@
+@use "../../../../styles/variables.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.img {
+  max-width: 15rem;
+
+  &_img {
+    width: 100%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+  }
+}
+
+.text_wrapper {
+  font-family: $fontLight;
+  font-size: 16px;
+
+  & > p:nth-child(1) {
+    margin-top: 0;
+  }
+}
+
+.text {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .content {
+    flex-wrap: nowrap;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}

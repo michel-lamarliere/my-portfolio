@@ -1,0 +1,43 @@
+@use "../../../../styles/variables.scss" as *;
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  height: calc(1.85rem + 5vw);
+}
+
+.name {
+  font-family: $fontBold;
+  font-size: calc(22px + 2vw);
+  text-align: center;
+}
+
+.title {
+  font-family: $fontBold;
+  font-size: calc(12px + 0.5vw);
+}
+
+.slideButton {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+
+  &_img {
+    width: calc(2.5rem + 0.5vw);
+    height: calc(2.5rem + 0.5vw);
+  }
+}

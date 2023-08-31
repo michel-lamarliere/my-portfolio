@@ -1,0 +1,25 @@
+@use "variables" as *;
+
+@mixin button($bottomMobile, $bottomDesktop) {
+  position: fixed;
+  bottom: $bottomMobile;
+  right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: $colorWhite;
+  color: $colorDarkGrey;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 100%;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  z-index: 3;
+
+  @media screen and (min-width: $desktopBreakpoint) {
+    bottom: $bottomDesktop;
+    right: 2rem;
+  }
+}

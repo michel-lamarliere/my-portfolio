@@ -1,0 +1,19 @@
+@use "../../../styles/variables" as *;
+
+.title {
+  font-family: $fontSemiBold;
+  font-size: 18px;
+}
+
+.line {
+  display: block;
+  width: 11.2rem;
+  height: 0.05rem;
+  background-color: $colorWhite;
+}
+
+@media screen and (min-width: $desktopBreakpoint) {
+  .title {
+    font-size: calc(18px + 0.1vw);
+  }
+}

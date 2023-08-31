@@ -1,0 +1,5 @@
+@use "../../../styles/export" as imported;
+
+.wrapper {
+  @include imported.button(1rem, 1rem);
+}

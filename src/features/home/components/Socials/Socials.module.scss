@@ -1,0 +1,27 @@
+@use "../../../../styles/export" as imported;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+
+  &__link {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    &__logo {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: imported.$desktopBreakpoint) {
+  .wrapper {
+    justify-content: flex-start;
+  }
+}

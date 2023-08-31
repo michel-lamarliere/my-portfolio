@@ -1,0 +1,64 @@
+@use "../../styles/export" as imported;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0rem auto 8rem auto;
+}
+
+.title {
+  display: none;
+}
+
+.contactWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: imported.$desktopBreakpoint) {
+  .wrapper {
+    gap: 4rem;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &_text {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .title {
+    display: block;
+  }
+
+  .contact {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    &_text {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      gap: 2rem;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+@use "../../../../styles/export" as imported;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & > input,
+  textarea {
+    padding: 0.5rem 1rem;
+    border: solid 0.1rem imported.$colorGrey;
+    border-radius: 0.2rem;
+    font-family: imported.$fontMedium;
+    font-size: 16px;
+    resize: none;
+    background-color: imported.$colorGrey;
+
+    &::placeholder {
+      color: imported.$colorPurple;
+      opacity: 1;
+    }
+
+    &:focus {
+      border: solid 0.1rem imported.$colorPurple;
+      outline: none;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.submit {
+  width: 5.3rem;
+  padding: 0.4em 1.05em;
+  border-radius: 0.2rem;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: imported.$colorGrey;
+
+  &:active {
+    background-color: imported.$colorOrange;
+    color: imported.$colorWhite;
+  }
+
+  &:disabled {
+    background-color: imported.$colorWhite;
+    color: imported.$colorLightGrey;
+    border: solid 1px imported.$colorLightGrey;
+    cursor: not-allowed;
+  }
+}
+
+.sent {
+  text-align: center;
+  font-size: 15px;
+  color: imported.$colorOrange;
+}
+
+.invalid {
+  border: solid 0.1rem imported.$colorOrange !important;
+
+  &_text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: imported.$desktopBreakpoint) {
+  .footer {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .wrapper {
+    width: 60%;
+  }
+
+  .title {
+    display: none;
+  }
+}
