@@ -13,12 +13,8 @@ export default function Error404Page() {
         <div className={classes.text_not_found}>Page introuvable !</div>
       </div>
       <div className={classes.links}>
-        <Link href="/home" className={classes.links_link}>
+        <Link href="/" className={classes.links_link}>
           Accueil
-        </Link>
-        <span>|</span>
-        <Link href="/projects" className={classes.links_link}>
-          Projets
         </Link>
       </div>
     </div>
