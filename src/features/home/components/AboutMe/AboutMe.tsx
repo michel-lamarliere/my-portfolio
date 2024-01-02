@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
 
-import mlImg from "src/assets/img/ml.jpg";
+import mlImg from "src/assets/img/photo-profil.jpg";
 
 import classes from "./AboutMe.module.scss";
 
@@ -18,36 +18,36 @@ export const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
         <div className={classes.text_wrapper}>
           <div className={classes.text}>
-            Je m’appelle Michel et je suis un développeur full stack basé à
-            Toulouse.
-          </div>
-          <div className={classes.text}>
-            Après avoir décroché ma licence en langues étrangères, j’ai décidé
-            de me réorienter et me lancer dans le développement.
-          </div>
-          <div className={classes.text}>
-            En tant qu’autodidacte, j’ai pour objectif de m’apprendre et de
-            m’améliorer jour après jour en intégrant une nouvelle technologie à
-            chaque nouveau projet.
-          </div>
-          <div className={classes.text}>
-            Rigoureux, passionné, curieux et efficace dans mon travail, je sais
-            m’adapter afin de créer des sites rapides, responsives et sécurisés.
-          </div>
-          {/* <div className={classes.text}>
-								Je peux intervenir dans des projets qui nécessitent de :
-								<div style={{ marginLeft: '2rem', marginTop: '0' }}>
-									- intégrer une maquette
-									<br />- créer un site web responsive (blog, site
-									vitrine)
-									<br />- créer un site web dynamique (API, base de
-									données)
-								</div>
-							</div> */}
-          <div className={classes.text}>
-            N’hésitez pas à me contacter, je ferai de mon mieux pour vous
-            répondre le plus rapidement possible !
-          </div>
+            💻 Développeur Full-Stack Passionné | Spécialisé en Front-End 🚀<br/>
+            🌟 Polyvalent
+            Bonjour, je suis un développeur Full-Stack spécialisé en Front-End passionné par l&apos;innovation et prêt à relever de nouveaux défis. Mes compétences s&apos;étendent de l&apos;intégration de fonctionnalités à la conception de produits, couvrant tout, du développement front-end (React) à la gestion avancée de bases de données.
+            <br/>
+            <br/>
+            🚀 Technologies Maîtrisées
+            <ul>
+            <li>Général: TypeScript, JavaScript, Zod, Yup</li>
+              <li>Front-end : React, Redux, TanStack Query, Sass, TailwindCss, styled-components</li>
+              <li>Back-end : Node, Express, passport, Stripe</li>
+              <li>Base de données: MongoDB, Firebase</li>
+              <li>Workflow : Git, Github Actions, AWS, Heroku, Vercel, Slack</li>
+              <li>Testing : Jest, Vitest, Cypress, react-testing-library</li>
+              <li>CMS : Wordpress, Strapi</li>
+              <li>Analytics: Google Analytics, Vercel, Plausible</li>
+              <li>Langues : Anglais et Espagnol professionnel. Français et Portugais en langue maternelle.</li>
+            </ul>
+            <br/><br/>
+            💡 Atouts
+            Rigoureux, passionné, curieux et efficace dans mon travail, je m&apos;adapte constamment pour créer des sites web rapides, esthétiques, responsives et sécurisés.
+            <br/><br/>
+            🤝 Expérience Freelance et Co-fondateur
+            Freelance depuis 3 ans et co-fondateur d’un site d&apos;analyse statistiques sportives, j’ai acquis de solides compétences.
+            <br/><br/>
+            🤝 Compétences Sociales
+            Autonome, ambitieux et réaliste dans la gestion de mes projets, j&apos;ai dirigé des projets clients en collaboration avec des designers et développeurs. J'ai développé un excellent relationnel, proposant une expérience axée sur la communication, l’écoute, l’adaptation, la flexibilité et la qualité.
+            <br/><br/>
+            🌍 Objectifs professionnels
+            Aujourd’hui, mon objectif est de développer pour une entreprise dont les valeurs me ressemblent, de rejoindre une équipe solidaire et ambitieuse, et surtout de continuer d’apprendre et m’améliorer.
+      </div>
         </div>
       </div>
     </div>
