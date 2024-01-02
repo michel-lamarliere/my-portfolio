@@ -47,7 +47,7 @@ export const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
             <br/><br/>
             🤝 Compétences Sociales
             <br/>
-            Autonome, ambitieux et réaliste dans la gestion de mes projets, j&apos;ai dirigé des projets clients en collaboration avec des designers et développeurs. J'ai développé un excellent relationnel, proposant une expérience axée sur la communication, l’écoute, l’adaptation, la flexibilité et la qualité.
+            Autonome, ambitieux et réaliste dans la gestion de mes projets, j&apos;ai dirigé des projets clients en collaboration avec des designers et développeurs. J&apos;ai développé un excellent relationnel, proposant une expérience axée sur la communication, l’écoute, l’adaptation, la flexibilité et la qualité.
             <br/><br/>
             🌍 Objectifs professionnels
             <br/>
