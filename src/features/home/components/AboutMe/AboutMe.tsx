@@ -18,8 +18,9 @@ export const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
         </div>
         <div className={classes.text_wrapper}>
           <div className={classes.text}>
-            💻 Développeur Full-Stack Passionné | Spécialisé en Front-End 🚀<br/>
+            💻 Développeur Full-Stack Passionné | Spécialisé en Front-End 🚀<br/><br/>
             🌟 Polyvalent
+            <br/>
             Bonjour, je suis un développeur Full-Stack spécialisé en Front-End passionné par l&apos;innovation et prêt à relever de nouveaux défis. Mes compétences s&apos;étendent de l&apos;intégration de fonctionnalités à la conception de produits, couvrant tout, du développement front-end (React) à la gestion avancée de bases de données.
             <br/>
             <br/>
@@ -35,17 +36,21 @@ export const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
               <li>Analytics: Google Analytics, Vercel, Plausible</li>
               <li>Langues : Anglais et Espagnol professionnel. Français et Portugais en langue maternelle.</li>
             </ul>
-            <br/><br/>
+            <br/>
             💡 Atouts
+            <br/>
             Rigoureux, passionné, curieux et efficace dans mon travail, je m&apos;adapte constamment pour créer des sites web rapides, esthétiques, responsives et sécurisés.
             <br/><br/>
             🤝 Expérience Freelance et Co-fondateur
+            <br/>
             Freelance depuis 3 ans et co-fondateur d’un site d&apos;analyse statistiques sportives, j’ai acquis de solides compétences.
             <br/><br/>
             🤝 Compétences Sociales
+            <br/>
             Autonome, ambitieux et réaliste dans la gestion de mes projets, j&apos;ai dirigé des projets clients en collaboration avec des designers et développeurs. J'ai développé un excellent relationnel, proposant une expérience axée sur la communication, l’écoute, l’adaptation, la flexibilité et la qualité.
             <br/><br/>
             🌍 Objectifs professionnels
+            <br/>
             Aujourd’hui, mon objectif est de développer pour une entreprise dont les valeurs me ressemblent, de rejoindre une équipe solidaire et ambitieuse, et surtout de continuer d’apprendre et m’améliorer.
       </div>
         </div>
