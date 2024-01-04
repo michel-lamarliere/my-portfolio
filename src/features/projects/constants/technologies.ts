@@ -1,53 +1,104 @@
-import reactIcon from "../../../assets/icons/react.svg";
-import reduxIcon from "../../../assets/icons/redux.svg";
-import typescriptIcon from "../../../assets/icons/typescript.svg";
-import wordpressIcon from "../../../assets/icons/wordpress.svg";
-import googleCloudIcon from "../../../assets/icons/googlecloud.svg";
-import firebaseIcon from "../../../assets/icons/firebase.svg";
-import apiIcon from "../../../assets/icons/api.svg";
-import nodejsIcon from "../../../assets/icons/nodejs.svg";
-import expressIcon from "../../../assets/icons/express.png";
-import mongodbIcon from "../../../assets/icons/mongodb.svg";
+import reactIcon from "src/assets/icons/technologies/react.svg";
+import reduxIcon from "src/assets/icons/technologies/redux.svg";
+import typescriptIcon from "src/assets/icons/technologies/typescript.svg";
+import javascriptIcon from "src/assets/icons/technologies/javascript.svg";
+import sassIcon from "src/assets/icons/technologies/sass.svg";
+import tailwindCssIcon from "src/assets/icons/technologies/tailwindcss.svg";
+import wordpressIcon from "src/assets/icons/technologies/wordpress.svg";
+import googleCloudIcon from "src/assets/icons/technologies/googlecloud.svg";
+import firebaseIcon from "src/assets/icons/technologies/firebase.svg";
+import nodejsIcon from "src/assets/icons/technologies/nodejs.svg";
+import strapiIcon from "src/assets/icons/technologies/strapi.svg";
+import expressIcon from "src/assets/icons/technologies/express.png";
+import mongodbIcon from "src/assets/icons/technologies/mongodb.svg";
+import stripeIcon from "src/assets/icons/technologies/stripe.png";
+import googleAnalyticsIcon from "src/assets/icons/technologies/ga.svg";
+import zustandIcon from "src/assets/icons/technologies/zustand.png";
+import nextJsIcon from "src/assets/icons/technologies/nextjs.svg";
+import jestIcon from "src/assets/icons/technologies/jest.png";
+import cypressIcon from "src/assets/icons/technologies/cypress.jpg";
+import gitIcon from "src/assets/icons/technologies/git.svg";
+import gitHubIcon from "src/assets/icons/technologies/github.svg";
+import reactTestingLibraryIcon from "src/assets/icons/technologies/react-testing-library.png";
 
 export const technologies = [
+  { name: "Javascript", icon: javascriptIcon },
   {
-    name: "react",
-    icon: reactIcon
-  },
-  {
-    name: "redux",
-    icon: reduxIcon
-  },
-  {
-    name: "typescript",
+    name: "Typescript",
     icon: typescriptIcon
   },
   {
-    name: "wordpress",
-    icon: wordpressIcon
+    name: "React",
+    icon: reactIcon
   },
   {
-    name: "googleCloud",
-    icon: googleCloudIcon
+    name: "NextJs",
+    icon: nextJsIcon
   },
   {
-    name: "firebase",
-    icon: firebaseIcon
+    name: "Redux",
+    icon: reduxIcon
   },
   {
-    name: "api",
-    icon: apiIcon
+    name: "Zustand",
+    icon: zustandIcon
   },
   {
-    name: "nodejs",
+    name: "Sass",
+    icon: sassIcon
+  },
+  {
+    name: "TailwindCss",
+    icon: tailwindCssIcon
+  },
+  {
+    name: "NodeJs",
     icon: nodejsIcon
   },
   {
-    name: "expressjs",
+    name: "ExpressJs",
     icon: expressIcon
   },
   {
-    name: "mongodb",
+    name: "MongoDB",
     icon: mongodbIcon
-  }
+  },
+  {
+    name: "Jest",
+    icon: jestIcon
+  },
+  {
+    name: "Cypress",
+    icon: cypressIcon
+  },
+  {
+    name: "React Testing Library",
+    icon: reactTestingLibraryIcon
+  },
+  {
+    name: "Stripe",
+    icon: stripeIcon
+  },
+  {
+    name: "Google Cloud",
+    icon: googleCloudIcon
+  },
+  {
+    name: "Firebase",
+    icon: firebaseIcon
+  },
+  {
+    name: "Strapi",
+    icon: strapiIcon
+  },
+  {
+    name: "Google analytics",
+    icon: googleAnalyticsIcon
+  },
+  {
+    name: "Wordpress",
+    icon: wordpressIcon
+  },
+  { name: "git", icon: gitIcon },
+  { name: "GitHub", icon: gitHubIcon }
 ] as const;

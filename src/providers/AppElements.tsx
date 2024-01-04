@@ -1,26 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
-import { usePathname } from "next/navigation";
-import { ToTopButton } from "@/components/buttons/ToTopButton/ToTopButton";
+import { CVButton } from "@/components/buttons/CVButton/CVButton";
 import { HomeButton } from "@/components/buttons/HomeButton/HomeButton";
 
 export function AppElements() {
   return (
     <>
       <HomeButton />
-      <ToTopButton />
-      {/*<ScrollToTop />*/}
+      <CVButton />
     </>
   );
-}
-
-function ScrollToTop() {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  return null;
 }

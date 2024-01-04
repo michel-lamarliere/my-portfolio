@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import { technologies } from "@/features/projects/constants/technologies";
 
 export type ProjectType = {
-  id: string;
+  id: number;
   title: string;
   img: StaticImageData;
   stackNames: Technologies[number]["name"][];

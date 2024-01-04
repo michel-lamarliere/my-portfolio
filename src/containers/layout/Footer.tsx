@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import githubIcon from "@/assets/icons/github.svg";
+import githubIcon from "@/assets/icons/technologies/github.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import maltIcon from "@/assets/icons/malt.svg";
 

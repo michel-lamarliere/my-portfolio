@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getTechStack } from "@/features/projects/utils/getTechStack";
 import { ProjectType } from "@/features/projects/types";
 
-import gitHubIcon from "@/assets/icons/github.svg";
+import gitHubIcon from "@/assets/icons/technologies/github.svg";
 import newTabIcon from "@/assets/icons/open-tab.svg";
 
 import classes from "./Project.module.scss";
@@ -33,12 +33,13 @@ export function Project({
         <div className={classes.title}>{title}</div>
         <div className={classes.description}>{description}</div>
         <div className={classes.stack}>
-          {stack.map(item => (
+          {stack.map(({ name, icon }) => (
             <Image
-              key={item.name}
+              key={name}
               className={classes.stack_item}
-              src={item.icon}
-              alt="logo"
+              src={icon}
+              alt={name}
+              title={name}
             />
           ))}
         </div>

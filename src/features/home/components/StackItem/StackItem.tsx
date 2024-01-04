@@ -1,7 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
-import classes from "./StackItem.module.scss";
+import classes from "src/features/home/components/StackItem/StackItem.module.scss";
 
 type StackItemProps = {
   text: string;

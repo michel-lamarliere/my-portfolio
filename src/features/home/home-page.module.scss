@@ -11,6 +11,34 @@
   display: none;
 }
 
+.stackWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 4.2rem);
+  justify-content: space-around;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+}
+
+.projectsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.projects {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+
 .contactWrapper {
   display: flex;
   flex-direction: column;
@@ -29,9 +57,22 @@
   }
 }
 
+
+@media screen and (min-width: 550px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (min-width: imported.$desktopBreakpoint) {
   .wrapper {
     gap: 4rem;
+  }
+
+  .stack {
+    column-gap: 1.5rem;
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, 4.5rem);
   }
 
   .contact {
@@ -49,6 +90,15 @@
 @media screen and (min-width: 1000px) {
   .title {
     display: block;
+  }
+    .stack {
+      column-gap: 1.5rem;
+      row-gap: 3rem;
+      grid-template-columns: repeat(auto-fit, 5.5rem);
+    }
+
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .contact {
