@@ -14,7 +14,6 @@ export const projects: ProjectType[] = [
       "Sass",
       "Typescript",
       "ExpressJs",
-      "NextJs",
       "MongoDB",
       "Stripe"
     ],
