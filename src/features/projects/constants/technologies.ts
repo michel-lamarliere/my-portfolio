@@ -20,6 +20,7 @@ import cypressIcon from "src/assets/icons/technologies/cypress.jpg";
 import gitIcon from "src/assets/icons/technologies/git.svg";
 import gitHubIcon from "src/assets/icons/technologies/github.svg";
 import reactTestingLibraryIcon from "src/assets/icons/technologies/react-testing-library.png";
+import viteIcon from "src/assets/icons/technologies/vite.svg";
 
 export const technologies = [
   { name: "Javascript", icon: javascriptIcon },
@@ -48,7 +49,7 @@ export const technologies = [
     icon: sassIcon
   },
   {
-    name: "TailwindCss",
+    name: "Tailwind CSS",
     icon: tailwindCssIcon
   },
   {
@@ -100,5 +101,6 @@ export const technologies = [
     icon: wordpressIcon
   },
   { name: "git", icon: gitIcon },
-  { name: "GitHub", icon: gitHubIcon }
+  { name: "GitHub", icon: gitHubIcon },
+  { name: "Vite", icon: viteIcon }
 ] as const;
