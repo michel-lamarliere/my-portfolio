@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
 
-import { Footer } from "@/containers/layout/Footer";
+import { Footer } from "@/layout/Footer";
 import { AppElements } from "@/providers/AppElements";
 
 import classes from "./layout.module.scss";

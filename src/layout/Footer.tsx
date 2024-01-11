@@ -8,7 +8,7 @@ import githubIcon from "@/assets/icons/technologies/github.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import maltIcon from "@/assets/icons/malt.svg";
 
-import classes from "./Footer.module.scss";
+import classes from "src/layout/Footer.module.scss";
 
 export function Footer() {
   return (

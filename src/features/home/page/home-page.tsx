@@ -13,7 +13,7 @@ import { StackItem } from "@/features/home/components/StackItem/StackItem";
 import { projects } from "@/features/projects/constants/projects";
 import { Project } from "@/features/projects/components/Project/Project";
 
-import classes from "./home-page.module.scss";
+import classes from "src/features/home/page/home-page.module.scss";
 
 export function HomePage() {
   const projectsRef = useRef<HTMLDivElement>(null);

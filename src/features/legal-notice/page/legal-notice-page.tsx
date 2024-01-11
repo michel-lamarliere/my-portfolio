@@ -8,7 +8,7 @@ import {
   LegalNoticeTitle
 } from "@/features/legal-notice/components/LegalNoticeTexts/LegalNoticeTexts";
 
-import classes from "./legal-notice-page.module.scss";
+import classes from "src/features/legal-notice/page/legal-notice-page.module.scss";
 
 export function LegalNoticePage() {
   return (
