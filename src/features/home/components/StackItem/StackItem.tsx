@@ -1,22 +1,22 @@
-import React from "react";
-import Image, { StaticImageData } from "next/image";
+import React from 'react';
+import Image, { StaticImageData } from 'next/image';
 
-import classes from "src/features/home/components/StackItem/StackItem.module.scss";
+import styles from './StackItem.module.scss';
 
-type StackItemProps = {
+type Props = {
   text: string;
   img: string | StaticImageData;
 };
 
-export function StackItem({ text, img }: StackItemProps) {
+export function StackItem({ text, img }: Props) {
   return (
-    <div className={classes.wrapper}>
-      {typeof img === "string" ? (
-        <img src={img} alt={text} className={classes.img} />
+    <div className={styles.wrapper}>
+      {typeof img === 'string' ? (
+        <img src={img} alt={text} className={styles.img} />
       ) : (
-        <Image src={img} alt={text} className={classes.img} />
+        <Image src={img} alt={text} className={styles.img} />
       )}
-      <div className={classes.text}>{text}</div>
+      <div className={styles.text}>{text}</div>
     </div>
   );
 }

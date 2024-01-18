@@ -1,4 +1,4 @@
-@use "../../../styles/export" as imported;
+@use "../../styles/export" as imported;
 
 .wrapper {
   @include imported.button(3.5rem, 3.5rem);

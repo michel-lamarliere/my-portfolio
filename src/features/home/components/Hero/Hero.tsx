@@ -1,25 +1,25 @@
 import React from "react";
 import Image from "next/image";
 
-import { MLLogo } from "@/components/UI/SVGLogos";
+import { MLLogo } from "@/features/home/components/Hero/MLLogo";
 
 import arrow from "@/assets/icons/arrow.svg";
 
-import classes from "./Hero.module.scss";
+import styles from "./Hero.module.scss";
 
-type HeroProps = {
+type Props = {
   arrowHandler: () => void;
 };
 
-export const Hero = ({ arrowHandler }: HeroProps) => {
+export const Hero = ({ arrowHandler }: Props) => {
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.container}>
-        <MLLogo className={classes.logo} />
-        <div className={classes.name}>Michel Lamarlière</div>
-        <div className={classes.title}>DÉVELOPPEUR FULL STACK</div>
-        <button className={classes.slideButton} onClick={arrowHandler}>
-          <Image className={classes.slideButton_img} src={arrow} alt="Flèche" />
+    <div className={ styles.wrapper }>
+      <div className={ styles.container }>
+        <MLLogo className={ styles.logo }/>
+        <div className={ styles.name }>Michel Lamarlière</div>
+        <div className={ styles.title }>DÉVELOPPEUR FULL STACK</div>
+        <button className={ styles.slideButton } onClick={ arrowHandler }>
+          <Image className={ styles.slideButton_img } src={ arrow } alt="Flèche"/>
         </button>
       </div>
     </div>

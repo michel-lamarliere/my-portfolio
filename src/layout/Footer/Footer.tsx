@@ -1,20 +1,20 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import githubIcon from "@/assets/icons/technologies/github.svg";
-import linkedinIcon from "@/assets/icons/linkedin.svg";
-import maltIcon from "@/assets/icons/malt.svg";
+import githubIcon from '@/assets/icons/technologies/github.svg';
+import linkedinIcon from '@/assets/icons/linkedin.svg';
+import maltIcon from '@/assets/icons/malt.svg';
 
-import classes from "src/layout/Footer.module.scss";
+import styles from './Footer.module.scss';
 
 export function Footer() {
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.container}>
-        <div className={classes.links}>
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <div className={styles.links}>
           <a
             href="https://www.linkedin.com/in/michel-lamarliere/"
             target="_blank"
@@ -22,8 +22,8 @@ export function Footer() {
           >
             <Image
               src={linkedinIcon}
-              alt={"Linkedin"}
-              className={classes.links_logo}
+              alt={'Linkedin'}
+              className={styles.links_logo}
             />
           </a>
           <a
@@ -31,7 +31,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            <Image src={maltIcon} alt="Malt" className={classes.links_logo} />
+            <Image src={maltIcon} alt="Malt" className={styles.links_logo} />
           </a>
           <a
             href="https://github.com/michel-lamarliere"
@@ -41,25 +41,25 @@ export function Footer() {
             <Image
               src={githubIcon}
               alt="GitHub"
-              className={classes.links_logo}
+              className={styles.links_logo}
             />
           </a>
-          <Link href="/legal-notice" className={classes.links_text}>
+          <Link href="/legal-notice" className={styles.links_text}>
             Mentions Légales
           </Link>
         </div>
-        <div className={classes.shoutOut}>
+        <div className={styles.shoutOut}>
           Par
-          <span className={classes.shoutOut_text}>&nbsp;Michel Lamarlière</span>
+          <span className={styles.shoutOut_text}>&nbsp;Michel Lamarlière</span>
         </div>
-        <div className={classes.shoutOut}>
+        <div className={styles.shoutOut}>
           <div>
             Logo et Web Design par
             <a
               href="https://www.enolalouge.com"
               target="_blank"
               rel="noreferrer"
-              className={classes.shoutOut_link}
+              className={styles.shoutOut_link}
             >
               &nbsp;Enola Louge
             </a>

@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import { getTechStack } from "@/features/projects/utils/getTechStack";
-import { ProjectType } from "@/features/projects/types";
+import { getTechStack } from '@/features/projects/utils/getTechStack';
+import { ProjectType } from '@/features/projects/types';
 
-import gitHubIcon from "@/assets/icons/technologies/github.svg";
-import newTabIcon from "@/assets/icons/open-tab.svg";
+import gitHubIcon from '@/assets/icons/technologies/github.svg';
+import newTabIcon from '@/assets/icons/open-tab.svg';
 
-import classes from "./Project.module.scss";
+import styles from './Project.module.scss';
 
 export function Project({
   id,
@@ -21,42 +21,42 @@ export function Project({
   const stack = getTechStack(stackNames);
 
   const description = isPersonalProject
-    ? "Projet Personnel"
-    : "Projet Professionnel";
+    ? 'Projet Personnel'
+    : 'Projet Professionnel';
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes["main-img"]}>
-        <Image className={classes["main-img"]} src={img} alt={title} />
+    <div className={styles.wrapper}>
+      <div className={styles.mainImg}>
+        <Image className={styles.mainImg} src={img} alt={title} />
       </div>
-      <div className={classes.footer}>
-        <div className={classes.title}>{title}</div>
-        <div className={classes.description}>{description}</div>
-        <div className={classes.stack}>
+      <div className={styles.footer}>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.description}>{description}</div>
+        <div className={styles.stack}>
           {stack.map(({ name, icon }) => (
             <Image
               key={name}
-              className={classes.stack_item}
+              className={styles.stack_item}
               src={icon}
               alt={name}
               title={name}
             />
           ))}
         </div>
-        <div className={classes.links}>
+        <div className={styles.links}>
           {githubUrl ? (
             <a href={githubUrl} target="_blank" rel="noreferrer">
-              <Image src={gitHubIcon} alt={"GitHub"} />
+              <Image src={gitHubIcon} alt={'GitHub'} />
             </a>
           ) : (
-            <div className={classes.empty}></div>
+            <div className={styles.empty}></div>
           )}
           {websiteUrl ? (
             <a href={websiteUrl} target="_blank" rel="noreferrer">
-              <Image src={newTabIcon} alt={"GitHub"} />
+              <Image src={newTabIcon} alt={'GitHub'} />
             </a>
           ) : (
-            <div className={classes.empty}></div>
+            <div className={styles.empty}></div>
           )}
         </div>
       </div>

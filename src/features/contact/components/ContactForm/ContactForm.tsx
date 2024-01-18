@@ -1,138 +1,118 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { z } from "zod";
-import classnames from "classnames";
+import React, { useEffect, useState } from 'react';
+import { z } from 'zod';
+import cn from 'classnames';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { FieldValues, useForm } from "react-hook-form";
+import { TitleLine } from '@/components/TitleLine/TitleLine';
+import { useSendEmail } from '@/features/contact/api/sendEmail';
 
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
-
-import classes from "./ContactForm.module.scss";
+import styles from './ContactForm.module.scss';
 
 const schema = z.object({
-  name: z.string().min(1, { message: "Required" }),
-  emailAddress: z.string().email({ message: "Required" }),
-  message: z.string().min(10, { message: "Required" })
+  name: z.string().min(1, { message: 'Required' }),
+  emailAddress: z.string().email({ message: 'Required' }),
+  message: z.string().min(10, { message: 'Required' })
 });
 
-type Schema = z.infer<typeof schema>;
-
-const inputs: Schema = {
-  name: "name",
-  emailAddress: "emailAddress",
-  message: "message"
-};
+const inputKeys = {
+  name: 'name',
+  emailAddress: 'emailAddress',
+  message: 'message'
+} as const;
 
 export function Form() {
   const {
     reset,
     register,
     handleSubmit,
-    formState: {
-      isSubmitted,
-      isSubmitSuccessful,
-      errors,
-      touchedFields,
-      isValid
-    }
+    formState: { errors, touchedFields, isValid }
   } = useForm({
     resolver: zodResolver(schema),
-    mode: "onBlur"
+    mode: 'onBlur',
+    defaultValues: {
+      name: '',
+      emailAddress: '',
+      message: ''
+    }
   });
   const [message, setMessage] = useState<string | null>(null);
 
-  const submitHandler = async (values: FieldValues) => {
-    setMessage("Envoi en cours...");
+  const { isPending, isSuccess, isError, mutateAsync } = useSendEmail();
 
-    const res = await fetch(
-      "https://formsubmit.co/ajax/contact@michel-lamarliere.com",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          name: values.name,
-          email: values.emailAddress,
-          message: values.message,
-          _captcha: "false"
-        })
-      }
-    );
-
-    if (res.ok) {
-      setMessage("Votre message a bien été envoyé !");
-    } else {
-      setMessage("Une erreur est survenue lors de l'envoi !");
-    }
-
+  const clearMessage = () => {
     setTimeout(() => {
       reset();
       setMessage(null);
     }, 5000);
   };
 
-  const nameClasses = classnames({
-    [classes.invalid]: errors.name && touchedFields.name
-  });
-
-  const emailAddressClasses = classnames({
-    [classes.invalid]: errors.emailAddress && touchedFields.emailAddress
-  });
-
-  const messageClasses = classnames({
-    [classes.invalid]: errors.message && touchedFields.message
-  });
+  useEffect(() => {
+    if (isPending) {
+      setMessage('Envoi en cours...');
+    } else if (isSuccess) {
+      setMessage('Votre message a bien été envoyé !');
+      clearMessage();
+      reset();
+    } else if (isError) {
+      setMessage("Une erreur est survenue lors de l'envoi !");
+      clearMessage();
+    }
+  }, [isError, isSuccess, isPending]);
 
   return (
-    <div className={classes.wrapper}>
-      <TitleLine text="Contact" className={classes.title} />
+    <div className={styles.wrapper}>
+      <TitleLine text="Contact" className={styles.title} />
       <form
-        onSubmit={handleSubmit(data => console.log(data))}
-        className={classes.form}
+        onSubmit={handleSubmit(data => mutateAsync(data))}
+        className={styles.form}
       >
         <input
-          className={nameClasses}
+          className={cn({
+            [styles.invalid]: errors.name && touchedFields.name
+          })}
           type="text"
-          placeholder={"Nom"}
-          {...register(inputs.name, { required: true })}
+          placeholder={'Nom'}
+          {...register(inputKeys.name, { required: true })}
         />
         {errors.name && (
-          <div className={classes.invalid_text}>
+          <div className={styles.invalid_text}>
             Veuillez entrer un nom valide.
           </div>
         )}
         <input
-          className={emailAddressClasses}
+          className={cn({
+            [styles.invalid]: errors.emailAddress && touchedFields.emailAddress
+          })}
           type="text"
           placeholder="E-mail"
-          {...register(inputs.emailAddress)}
+          {...register(inputKeys.emailAddress)}
         />
         {errors.emailAddress && (
-          <div className={classes.invalid_text}>
+          <div className={styles.invalid_text}>
             Veuillez entrer une adresse email valide.
           </div>
         )}
         <textarea
-          className={messageClasses}
+          className={cn({
+            [styles.invalid]: errors.message && touchedFields.message
+          })}
           rows={10}
           placeholder="Message"
-          {...register(inputs.message)}
+          {...register(inputKeys.message)}
         />
         {errors.message && (
-          <div className={classes.invalid_text}>
+          <div className={styles.invalid_text}>
             Veuillez entrer au moins 10 caractères.
           </div>
         )}
-        <div className={classes.footer}>
-          <button
-            disabled={!isValid}
-            onClick={submitHandler}
-            type="submit"
-            className={classes.submit}
-          >
+        <div className={styles.footer}>
+          <button disabled={!isValid} type="submit" className={styles.submit}>
             Envoyer
           </button>
-          {message && <div className={classes.sent}>{message}</div>}
+          {message && <div className={styles.sent}>{message}</div>}
         </div>
       </form>
     </div>

@@ -1,52 +1,53 @@
-import React from "react";
-import Image from "next/image";
-import { TitleLine } from "@/components/UI/TitleLine/TitleLine";
+import React from 'react';
+import Image from 'next/image';
 
-import gitHubIcon from "@/assets/icons/technologies/github.svg";
-import linkedinIcon from "@/assets/icons/linkedin.svg";
-import maltIcon from "@/assets/icons/malt.svg";
+import { TitleLine } from '@/components/TitleLine/TitleLine';
 
-import classes from "src/features/home/components/Socials/Socials.module.scss";
+import gitHubIcon from '@/assets/icons/technologies/github.svg';
+import linkedinIcon from '@/assets/icons/linkedin.svg';
+import maltIcon from '@/assets/icons/malt.svg';
+
+import styles from './Socials.module.scss';
 
 export function Socials() {
   return (
-    <div className={classes.wrapper}>
-      <TitleLine text={"Me suivre"} />
-      <div className={classes.socials}>
+    <div className={styles.wrapper}>
+      <TitleLine text={'Me suivre'} />
+      <div className={styles.socials}>
         <a
           href="https://www.linkedin.com/in/michel-lamarliere/"
           target="_blank"
           rel="noreferrer"
-          className={classes.socials__link}
+          className={styles.socials__link}
         >
           <Image
             src={linkedinIcon}
-            alt={"GitHub"}
-            className={classes.socials__link__logo}
+            alt={'GitHub'}
+            className={styles.socials__link__logo}
           />
         </a>
         <a
           href="https://www.malt.fr/dashboard/freelancer"
           target="_blank"
           rel="noreferrer"
-          className={classes.socials__link}
+          className={styles.socials__link}
         >
           <Image
             src={maltIcon}
-            alt={"GitHub"}
-            className={classes.socials__link__logo}
+            alt={'GitHub'}
+            className={styles.socials__link__logo}
           />
         </a>
         <a
           href="https://github.com/michel-lamarliere"
           target="_blank"
           rel="noreferrer"
-          className={classes.socials__link}
+          className={styles.socials__link}
         >
           <Image
             src={gitHubIcon}
-            alt={"GitHub"}
-            className={classes.socials__link__logo}
+            alt={'GitHub'}
+            className={styles.socials__link__logo}
           />
         </a>
       </div>
