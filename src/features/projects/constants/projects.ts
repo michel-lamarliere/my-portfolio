@@ -34,7 +34,7 @@ export const projects: ProjectType[] = [
       "Sass"
     ],
     websiteUrl: "https://enolalouge.com",
-    githubUrl: null,
+    githubUrl: 'https://github.com/michel-lamarliere/enola-portfolio',
     isPersonalProject: false
   },
   {
